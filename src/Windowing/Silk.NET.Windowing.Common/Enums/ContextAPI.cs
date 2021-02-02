@@ -18,16 +18,6 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Use Vulkan. Silk.NET doesn't support this yet.
         /// </summary>
-        Vulkan,
-
-        /// <summary>
-        /// Use core OpenGL. This is standard for software intended for desktop computers.
-        /// </summary>
-        OpenGL,
-
-        /// <summary>
-        /// Use OpenGL ES. This is standard for software intended to be compatible with embedded systems, such as phones.
-        /// </summary>
-        OpenGLES
+        Vulkan
     }
 }

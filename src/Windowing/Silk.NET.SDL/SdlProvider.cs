@@ -31,7 +31,7 @@ namespace Silk.NET.SDL
         public static bool SetMainReady { get; set; }
 
         /// <summary>
-        /// Creates a new instance of the GlfwProvider class.
+        /// Creates a new instance of the SDLProvider class.
         /// </summary>
         static SdlProvider()
         {

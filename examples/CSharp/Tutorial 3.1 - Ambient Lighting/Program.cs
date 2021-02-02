@@ -1,5 +1,4 @@
 using Silk.NET.Input;
-using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using System.Drawing;
 using System.Linq;
@@ -84,7 +83,7 @@ namespace Tutorial
         {
             var options = WindowOptions.Default;
             options.Size = new Vector2D<int>(800, 600);
-            options.Title = "LearnOpenGL with Silk.NET";
+            options.Title = "Silk.NET";
             window = Window.Create(options);
 
             window.Load += OnLoad;

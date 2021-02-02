@@ -1,5 +1,5 @@
-﻿// This file is part of Silk.NET.
-// 
+// This file is part of Silk.NET.
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -55,9 +55,7 @@ namespace Silk.NET.Windowing.Sdl
         public override event Action<bool>? FocusChanged;
 
         // Properties
-        public override IGLContext? GLContext => _ctx ??= API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
-            ? new SdlContext(Sdl, SdlWindow, this)
-            : null;
+        public override IGLContext? GLContext => _ctx;
 
         public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
         protected override nint CoreHandle => (nint) SdlWindow;
@@ -136,12 +134,6 @@ namespace Silk.NET.Windowing.Sdl
                     flags |= WindowFlags.WindowVulkan;
                     break;
                 }
-                case ContextAPI.OpenGLES:
-                case ContextAPI.OpenGL:
-                {
-                    flags |= WindowFlags.WindowOpengl;
-                    break;
-                }
             }
 
             IsClosingVal = false;
@@ -157,57 +149,46 @@ namespace Silk.NET.Windowing.Sdl
                 (uint) flags
             );
             Sdl.ThrowError();
-            
+
             sharedContext?.MakeCurrent();
             (GLContext as SdlContext)?.Create
             (
                 (GLattr.GLContextMajorVersion, opts.API.Version.MajorVersion),
                 (GLattr.GLContextMinorVersion, opts.API.Version.MinorVersion),
-                (
-                    GLattr.GLContextProfileMask,
-                    (int) (opts.API.API == ContextAPI.OpenGLES
-                        ? GLprofile.GLContextProfileES
-                        : opts.API.Profile switch
-                        {
-                            ContextProfile.Core => GLprofile.GLContextProfileCore,
-                            ContextProfile.Compatability => GLprofile.GLContextProfileCompatibility,
-                            _ => throw new ArgumentOutOfRangeException(nameof(opts), "Bad ContextProfile")
-                        })
-                ),
                 (GLattr.GLContextFlags, (int) opts.API.Flags),
                 (
                     GLattr.GLDepthSize,
-                    opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1 
+                    opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1
                         ? 16
                         : opts.PreferredDepthBufferBits.Value
                 ),
                 (
                     GLattr.GLStencilSize,
-                    opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1 
+                    opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1
                         ? 0
                         : opts.PreferredStencilBufferBits.Value
                 ),
                 (
                     GLattr.GLRedSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.X == -1 
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.X == -1
                         ? 8
                         : opts.PreferredBitDepth.Value.X
                 ),
                 (
                     GLattr.GLGreenSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Y == -1 
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Y == -1
                         ? 8
                         : opts.PreferredBitDepth.Value.Y
                 ),
                 (
                     GLattr.GLBlueSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Z == -1 
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Z == -1
                         ? 8
                         : opts.PreferredBitDepth.Value.Z
                 ),
                 (
                     GLattr.GLAlphaSize,
-                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.W == -1 
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.W == -1
                         ? 8
                         : opts.PreferredBitDepth.Value.W
                 ),
@@ -400,7 +381,7 @@ namespace Silk.NET.Windowing.Sdl
                     Events.RemoveAt(i);
                 }
             }
-            
+
             EndEventProcessing(taken);
         }
 
@@ -469,7 +450,7 @@ namespace Silk.NET.Windowing.Sdl
                     Events.Add(@event);
                 }
             }
-            
+
             EndEventProcessing(taken);
         }
     }

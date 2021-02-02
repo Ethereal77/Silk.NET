@@ -37,7 +37,7 @@ namespace Silk.NET.Input
         /// Determines whether the cursor is locked to the bounds of the view/window of this input context.
         /// </summary>
         /// <remarks>
-        /// Only supported by SDL, will have no effect on GLFW.
+        /// Only supported by SDL.
         /// </remarks>
         bool IsConfined { get; set; }
 

@@ -6,10 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\OpenGL\Silk.NET.OpenGLES\Silk.NET.OpenGLES.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
         <PackageReference Include="Ultz.SuperInvoke.AOT" Version="1.1.0" />
     </ItemGroup>
 </Project>

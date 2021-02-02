@@ -14,7 +14,7 @@ namespace Tutorial
             //Create a window.
             var options = WindowOptions.Default;
             options.Size = new Vector2D<int>(800, 600);
-            options.Title = "LearnOpenGL with Silk.NET";
+            options.Title = "Silk.NET";
 
             window = Window.Create(options);
 

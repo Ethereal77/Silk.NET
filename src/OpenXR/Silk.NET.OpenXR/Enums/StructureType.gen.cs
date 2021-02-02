@@ -134,20 +134,6 @@ namespace Silk.NET.OpenXR
         TypeDebugUtilsMessengerCreateInfoExt = 1000019002,
         [NativeName("Name", "XR_TYPE_DEBUG_UTILS_LABEL_EXT")]
         TypeDebugUtilsLabelExt = 1000019003,
-        [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_OPENGL_WIN32_KHR")]
-        TypeGraphicsBindingOpenglWin32Khr = 1000023000,
-        [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_OPENGL_XLIB_KHR")]
-        TypeGraphicsBindingOpenglXlibKhr = 1000023001,
-        [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_OPENGL_XCB_KHR")]
-        TypeGraphicsBindingOpenglXcbKhr = 1000023002,
-        [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_OPENGL_KHR")]
-        TypeSwapchainImageOpenglKhr = 1000023004,
-        [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_OPENGL_KHR")]
-        TypeGraphicsRequirementsOpenglKhr = 1000023005,
-        [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_OPENGL_ES_KHR")]
-        TypeSwapchainImageOpenglESKhr = 1000024002,
-        [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_OPENGL_ES_KHR")]
-        TypeGraphicsRequirementsOpenglESKhr = 1000024003,
         [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_VULKAN_KHR")]
         TypeGraphicsBindingVulkanKhr = 1000025000,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_VULKAN_KHR")]

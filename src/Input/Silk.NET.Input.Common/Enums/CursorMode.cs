@@ -28,7 +28,7 @@ namespace Silk.NET.Input
         /// Cursor is invisible, and is restricted to the center of the screen.
         /// </summary>
         /// <remarks>
-        /// Only supported by GLFW, throws on SDL if used.
+        /// Throws on SDL if used.
         /// </remarks>
         Disabled,
 

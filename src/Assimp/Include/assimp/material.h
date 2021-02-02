@@ -424,7 +424,7 @@ enum aiTextureFlags
 // ---------------------------------------------------------------------------
 /** @brief Defines alpha-blend flags.
  *
- *  If you're familiar with OpenGL or D3D, these flags aren't new to you.
+ *  If you're familiar with D3D, these flags aren't new to you.
  *  They define *how* the final color value of a pixel is computed, basing
  *  on the previous color at that pixel and the new color value from the
  *  material.

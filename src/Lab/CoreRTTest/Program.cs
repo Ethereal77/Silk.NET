@@ -1,5 +1,4 @@
 using Silk.NET.Input;
-using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using System;
 using System.Drawing;
@@ -90,7 +89,6 @@ namespace Tutorial
 
         private static void Main()
         {
-            Silk.NET.Input.Glfw.GlfwInput.RegisterPlatform();
             Silk.NET.Input.Sdl.SdlInput.RegisterPlatform();
 
             foreach (var s in Window.Platforms.Select
@@ -103,7 +101,7 @@ namespace Tutorial
                 WindowState.Normal, WindowBorder.Resizable, true, true, VideoMode.Default
             );
             options.Size = new Vector2D<int>(800, 600);
-            options.Title = "LearnOpenGL with Silk.NET";
+            options.Title = "Silk.NET";
             window = Window.Create(options);
 
             window.Load += OnLoad;

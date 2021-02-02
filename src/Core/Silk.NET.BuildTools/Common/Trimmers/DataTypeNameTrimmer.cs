@@ -11,12 +11,12 @@ namespace Silk.NET.BuildTools.Common.Trimmers
 {
     /// <inheritdoc cref="ITrimmer{TTrimmable}" />
     /// <summary>
-    /// Trims OpenGL data type endings from function names.
+    /// Trims Vulkan data type endings from function names.
     /// </summary>
     public class DataTypeNameTrimmer : ITrimmer<Function>, ITrimmer<string>
     {
         /// <summary>
-        /// This regex matches against known OpenGL function endings, picking them out from function names.
+        /// This regex matches against known Vulkan function endings, picking them out from function names.
         /// It is comprised of two parts - the main matching set (here, the main capturing group), and a negative
         /// lookbehind workaround for difficult-to-match names. The primary set matches the actual function ending,
         /// while the lookbehind asserts that the ending match will not overreach into the end of a word.

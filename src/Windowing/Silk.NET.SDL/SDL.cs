@@ -33,9 +33,6 @@ namespace Silk.NET.SDL
         public const string HintRenderDriver =
             "SDL_RENDER_DRIVER";
 
-        public const string HintRenderOpenglShaders =
-            "SDL_RENDER_OPENGL_SHADERS";
-
         public const string HintRenderDirect3DThreadsafe =
             "SDL_RENDER_DIRECT3D_THREADSAFE";
 

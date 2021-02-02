@@ -34,14 +34,6 @@ namespace Silk.NET.Windowing
         VideoMode VideoMode { get; }
 
         /// <summary>
-        /// This monitor's gamma correction.
-        /// </summary>
-        /// <remarks>
-        /// Only supported by GLFW, has no effect on SDL.
-        /// </remarks>
-        float Gamma { get; set; }
-
-        /// <summary>
         /// Get all video modes that this monitor supports.
         /// </summary>
         /// <returns>An array of all video modes.</returns>

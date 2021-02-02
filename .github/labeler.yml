@@ -16,9 +16,6 @@ area-OpenAL:
 area-OpenCL:
 - any: ['src/OpenCL/**/*']
 
-area-OpenGL:
-- any: ['src/OpenGL/**/*']
-
 area-OpenXR:
 - any: ['src/OpenXR/**/*']
 
@@ -30,8 +27,3 @@ area-DirectX/Windows:
 
 area-FEMFX:
 - any: ['src/AMD/FEMFX/**/*']
-
-platform-GLFW:
-- any: ['src/Windowing/Silk.NET.GLFW/**/*',
-        'src/Windowing/Silk.NET.Windowing.Desktop/**/*',
-        'src/Windowing/Silk.NET.Windowing.Glfw/**/*']

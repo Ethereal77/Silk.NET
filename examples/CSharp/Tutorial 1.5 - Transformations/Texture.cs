@@ -1,4 +1,3 @@
-using Silk.NET.OpenGL;
 using System;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;

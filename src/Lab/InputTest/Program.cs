@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
-using Silk.NET.GLFW;
 using Silk.NET.Input;
 using Silk.NET.Windowing;
 using MouseButton = Silk.NET.Input.MouseButton;
@@ -116,8 +115,6 @@ namespace InputTest
                     gamepad.ButtonUp += InputGamepadOnButtonUp;
                     gamepad.ThumbstickMoved += GamepadOnThumbstickMoved;
                     gamepad.TriggerMoved += GamepadOnTriggerMoved;
-                    //Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
-                    //GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
                     //Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
                 }
                 else

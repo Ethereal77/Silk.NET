@@ -13,8 +13,8 @@ A summary of the issue you're experiencing.
 # Steps to reproduce
 - Platform: Mobile/Desktop
 - Framework Version: .NET Core 3, .NET 4.8
-- API: Vulkan/OpenGL
-- API Version: Vulkan 1.2/OpenGL 4.3 Legacy/OpenGL 4.5 Core/OpenGLES 3.2
+- API: Vulkan
+- API Version: Vulkan 1.2
 1. First I did this
 2. Then I did this
 

@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -10,7 +10,7 @@ namespace Silk.NET.Windowing
     /// </summary>
     /// <remarks>
     /// <para>
-    /// By default, this struct uses OpenGL 3.3, core profile, forward-compatable.
+    /// By default, this struct uses Vulkan 1.1.
     /// </para>
     /// </remarks>
     public struct GraphicsAPI
@@ -19,11 +19,6 @@ namespace Silk.NET.Windowing
         /// The rendering API to use.
         /// </summary>
         public ContextAPI API { get; set; }
-
-        /// <summary>
-        /// The profile to use.
-        /// </summary>
-        public ContextProfile Profile { get; set; }
 
         /// <summary>
         /// Context creation flags.
@@ -42,41 +37,19 @@ namespace Silk.NET.Windowing
         /// <param name="profile">The context profile to use.</param>
         /// <param name="flags">The context flags to use.</param>
         /// <param name="apiVersion">The API version to use.</param>
-        public GraphicsAPI(ContextAPI api, ContextProfile profile, ContextFlags flags, APIVersion apiVersion)
+        public GraphicsAPI(ContextAPI api, ContextFlags flags, APIVersion apiVersion)
         {
             API = api;
-            Profile = profile;
             Flags = flags;
             Version = apiVersion;
         }
 
         /// <summary>
-        /// Create a new instance of the GraphicsAPI struct, implicitly using the core profile and default context
-        /// flags of the given api.
-        /// </summary>
-        /// <param name="api">The context API to use.</param>
-        /// <param name="apiVersion">The API version to use.</param>
-        public GraphicsAPI(ContextAPI api, APIVersion apiVersion)
-            : this(api, ContextProfile.Core, ContextFlags.Default, apiVersion)
-        {
-            // do nothing else
-        }
-
-        /// <summary>
-        /// The default graphics API. This is OpenGL 3.3 core profile, with forward compatability enabled.
+        /// The default graphics API. This is Vulkan 1.1.
         /// </summary>
         public static GraphicsAPI Default => new GraphicsAPI
         (
-            ContextAPI.OpenGL, ContextProfile.Core,
-            ContextFlags.ForwardCompatible, new APIVersion(3, 3)
-        );
-
-        /// <summary>
-        /// The default vulkan graphics API. This is Vulkan 1.1.
-        /// </summary>
-        public static GraphicsAPI DefaultVulkan => new GraphicsAPI
-        (
-            ContextAPI.Vulkan, ContextProfile.Core,
+            ContextAPI.Vulkan,
             ContextFlags.ForwardCompatible, new APIVersion(1, 1)
         );
 

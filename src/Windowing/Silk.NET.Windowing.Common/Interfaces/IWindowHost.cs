@@ -18,7 +18,7 @@ namespace Silk.NET.Windowing
         /// If the window host is another window, if the underlying API supports it a child window will be created
         /// with the current window as the parent.
         /// If the window host is a window platform, the window may be created on any monitor (usually the main monitor)
-        /// and will have no parent window. Note that the GLFW backend does not support child windows.
+        /// and will have no parent window.
         /// </remarks>
         /// <returns>The created window.</returns>
         IWindow CreateWindow(WindowOptions opts);

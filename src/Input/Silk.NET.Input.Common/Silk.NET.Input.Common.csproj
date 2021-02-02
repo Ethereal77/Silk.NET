@@ -8,9 +8,6 @@
     
     <ItemGroup>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-            <_Parameter1>Silk.NET.Input.Glfw</_Parameter1>
-        </AssemblyAttribute>
-        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
             <_Parameter1>Silk.NET.Input.Sdl</_Parameter1>
         </AssemblyAttribute>
     </ItemGroup>

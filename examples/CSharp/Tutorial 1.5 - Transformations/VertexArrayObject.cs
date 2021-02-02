@@ -1,4 +1,3 @@
-using Silk.NET.OpenGL;
 using System;
 
 namespace Tutorial

@@ -20,29 +20,6 @@ namespace Silk.NET.Windowing.Sdl
         public static void RegisterPlatform() => SdlPlatform.GetOrRegister();
 
         /// <summary>
-        /// Creates a <see cref="IView"/> from the given native handle using <see cref="SDL.Sdl.CreateWindowFrom"/>.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// The returned <see cref="IView" /> may also implement <see cref="IWindow"/>. To determine whether this is the
-        /// case, use as <c>is</c> or <c>as</c> expression.
-        /// </para>
-        /// <para>
-        /// SDL doesn't obtain context information from existing native window handles. As a result, if you'd like to
-        /// use the returned <see cref="IView"/> as a <see cref="IGLContextSource"/> (or use any other windowing OpenGL
-        /// features), you'll need to configure this window with a custom context. Pass a <see cref="IGLContext" /> into
-        /// the ctx parameter to do this.
-        /// </para>
-        /// </remarks>
-        /// <param name="handle">The native window handle to create a SDL view/window from.</param>
-        /// <param name="ctx">The custom <see cref="IGLContext"/> wrapper over the existing OpenGL context.</param>
-        /// <returns>
-        /// A <see cref="IView" /> wrapper over the existing handle. May also implement <see cref="IWindow" />.
-        /// </returns>
-        public static unsafe IView CreateFrom(void* handle, IGLContext? ctx = null)
-            => SdlPlatform.GetOrRegister().From(handle, ctx);
-
-        /// <summary>
         /// Prioritizes the SDL windowing platform over others.
         /// </summary>
         public static void Use() => Window.PrioritizeSdl();

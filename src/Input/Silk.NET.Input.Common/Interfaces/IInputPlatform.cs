@@ -21,8 +21,7 @@ namespace Silk.NET.Input
         /// Generally, each Input package will also have a matching Windowing package,
         /// and the Input package will reference the Windowing package. IsApplicable works
         /// by checking that the given window is an instance created by the Windowing
-        /// package the Input package references. For example, GlfwInputPlatform will only
-        /// be applicable for a GlfwWindow.
+        /// package the Input package references.
         /// </remarks>
         bool IsApplicable(IView view);
 

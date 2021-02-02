@@ -96,8 +96,8 @@ enum aiPostProcessSteps
     // -------------------------------------------------------------------------
     /** <hr>Converts all the imported data to a left-handed coordinate space.
      *
-     * By default the data is returned in a right-handed coordinate space (which
-     * OpenGL prefers). In this space, +X points to the right,
+     * By default the data is returned in a right-handed coordinate space. In
+     * this space, +X points to the right,
      * +Z points towards the viewer, and +Y points upwards. In the DirectX
      * coordinate space +X points to the right, +Y points upwards, and +Z points
      * away from the viewer.

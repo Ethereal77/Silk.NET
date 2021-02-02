@@ -17,8 +17,6 @@ namespace Silk.NET.SDL
     {
         [NativeName("Name", "SDL_WINDOW_FULLSCREEN")]
         WindowFullscreen = 0x1,
-        [NativeName("Name", "SDL_WINDOW_OPENGL")]
-        WindowOpengl = 0x2,
         [NativeName("Name", "SDL_WINDOW_SHOWN")]
         WindowShown = 0x4,
         [NativeName("Name", "SDL_WINDOW_HIDDEN")]

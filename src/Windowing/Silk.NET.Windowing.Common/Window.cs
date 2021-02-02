@@ -17,9 +17,7 @@ namespace Silk.NET.Windowing
     /// </summary>
     public static class Window
     {
-        private const string GlfwBackendNamespace = "Silk.NET.Windowing.Glfw";
         private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
-        private const string GlfwBackendName = "GlfwPlatform";
         private const string SdlBackendName = "SdlPlatform";
 
         private static List<Type> _platformsKeys = new List<Type>();
@@ -52,7 +50,6 @@ namespace Silk.NET.Windowing
         private static void DoLoadFirstPartyPlatformsViaReflection()
         {
             // Try add the first-party backends
-            TryAdd(GlfwBackendNamespace);
             TryAdd(SdlBackendNamespace);
         }
 
@@ -177,22 +174,6 @@ namespace Silk.NET.Windowing
             Remove(platform);
             _platformsKeys.Insert(0, platform.GetType());
             _platformsValues.Insert(0, platform);
-        }
-
-        /// <summary>
-        /// If added, moves the GLFW platform to the top of the platform list, to ensure that <see cref="Window"/>
-        /// functions check/use the provided platform first.
-        /// </summary>
-        public static void PrioritizeGlfw()
-        {
-            var platform = Platforms.FirstOrDefault
-                (x => x.GetType().FullName == GlfwBackendNamespace + "." + GlfwBackendName);
-            if (platform is null)
-            {
-                return;
-            }
-
-            Prioritize(platform);
         }
 
         /// <summary>

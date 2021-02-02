@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Contexts;
 using Veldrid;
-using Veldrid.OpenGL;
 using Veldrid.Vk;
 using Vulkan.Xlib;
 
@@ -84,7 +83,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 new GraphicsAPI
                 (
                     ContextAPI.None,
-                    ContextProfile.Core,
                     ContextFlags.ForwardCompatible,
                     new APIVersion(1, 0)
                 ),
@@ -96,11 +94,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 VideoMode.Default,
                 null
             );
-
-            if (preferredBackend == GraphicsBackend.OpenGL || preferredBackend == GraphicsBackend.OpenGLES)
-            {
-                SetGlContextAttributes(deviceOptions, preferredBackend, ref opts);
-            }
 
             window = Window.Create(opts);
             window.Initialize();
@@ -151,8 +144,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             {
                 GraphicsBackend.Direct3D11 => CreateDefaultD3D11GraphicsDevice(options, window),
                 GraphicsBackend.Vulkan => CreateVulkanGraphicsDevice(options, window),
-                GraphicsBackend.OpenGL => CreateDefaultOpenGlGraphicsDevice(options, window, preferredBackend),
-                GraphicsBackend.OpenGLES => CreateDefaultOpenGlGraphicsDevice(options, window, preferredBackend),
                 _ => throw new VeldridException("Invalid GraphicsBackend: " + preferredBackend)
             };
 
@@ -225,115 +216,15 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 return GraphicsBackend.Direct3D11;
             }
 
-            return GraphicsDevice.IsBackendSupported(GraphicsBackend.Vulkan)
-                ? GraphicsBackend.Vulkan
-                : GraphicsBackend.OpenGL;
+            return GraphicsBackend.Vulkan;
         }
-        
-        private const int GlesMajor = 3;
-        private const int GlesMinor = 1;
-        private const int GlMajor = 4;
-        private const int GlMinor = 5;
 
         public static GraphicsAPI ToGraphicsAPI(this GraphicsBackend backend) => backend switch
         {
-            GraphicsBackend.Direct3D11 => GraphicsAPI.None, GraphicsBackend.Vulkan => GraphicsAPI.DefaultVulkan,
-            GraphicsBackend.OpenGL => new(ContextAPI.OpenGL, new(GlMajor, GlMinor)),
-            GraphicsBackend.OpenGLES => new(ContextAPI.OpenGLES, new(GlesMajor, GlesMinor)),
+            GraphicsBackend.Direct3D11 => GraphicsAPI.None,
+            GraphicsBackend.Vulkan => GraphicsAPI.Default,
             _ => throw new ArgumentOutOfRangeException()
         };
-
-        private static unsafe GraphicsDevice CreateDefaultOpenGlGraphicsDevice
-        (
-            GraphicsDeviceOptions options,
-            IView window,
-            GraphicsBackend backend
-        )
-        {
-            var platformInfo = new OpenGLPlatformInfo
-            (
-                window.Handle,
-                x => window.GLContext!.GetProcAddress(x),
-                _ => window.GLContext!.MakeCurrent(),
-                () => window.GLContext!.IsCurrent ? window.GLContext!.Handle : default,
-                () => window.GLContext!.Clear(),
-                _ => window.GLContext!.Dispose(),
-                () => window.GLContext!.SwapBuffers(),
-                sync => window.GLContext!.SwapInterval(sync ? 1 : 0)
-            );
-
-            return GraphicsDevice.CreateOpenGL
-            (
-                options,
-                platformInfo,
-                (uint) window.Size.X,
-                (uint) window.Size.Y
-            );
-        }
-
-        private static void SetGlContextAttributes
-            (GraphicsDeviceOptions options, GraphicsBackend backend, ref WindowOptions opts)
-        {
-            if (backend != GraphicsBackend.OpenGL && backend != GraphicsBackend.OpenGLES)
-            {
-                throw new VeldridException
-                (
-                    $"{nameof(backend)} must be {nameof(GraphicsBackend.OpenGL)} or {nameof(GraphicsBackend.OpenGLES)}."
-                );
-            }
-
-            var api = opts.API;
-            var contextFlags = options.Debug
-                ? ContextFlags.Debug | ContextFlags.ForwardCompatible
-                : ContextFlags.ForwardCompatible;
-
-            api.Flags = contextFlags;
-
-            (var major, var minor) = GetMaxGLVersion(backend == GraphicsBackend.OpenGLES);
-
-            if (backend == GraphicsBackend.OpenGL)
-            {
-                api.Profile = ContextProfile.Core;
-                api.API = ContextAPI.OpenGL;
-                api.Version = new APIVersion(major, minor);
-            }
-            else
-            {
-                api.Profile = ContextProfile.Core;
-                api.API = ContextAPI.OpenGLES;
-                api.Version = new APIVersion(major, minor);
-            }
-
-            var depthBits = 0;
-            var stencilBits = 0;
-            if (options.SwapchainDepthFormat.HasValue)
-            {
-                switch (options.SwapchainDepthFormat)
-                {
-                    case PixelFormat.R16_UNorm:
-                        depthBits = 16;
-                        break;
-                    case PixelFormat.D24_UNorm_S8_UInt:
-                        depthBits = 24;
-                        stencilBits = 8;
-                        break;
-                    case PixelFormat.R32_Float:
-                        depthBits = 32;
-                        break;
-                    case PixelFormat.D32_Float_S8_UInt:
-                        depthBits = 32;
-                        stencilBits = 8;
-                        break;
-                    default:
-                        throw new VeldridException("Invalid depth format: " + options.SwapchainDepthFormat.Value);
-                }
-            }
-
-            opts.PreferredDepthBufferBits = depthBits;
-            opts.PreferredStencilBufferBits = stencilBits;
-
-            opts.API = api;
-        }
 
         private static GraphicsDevice CreateDefaultD3D11GraphicsDevice
         (
@@ -364,8 +255,5 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
 
             return Encoding.UTF8.GetString(stringStart, characters);
         }
-
-        private static (int Major, int Minor) GetMaxGLVersion
-            (bool gles) => gles ? (GlesMajor, GlesMinor) : (GlMajor, GlMinor);
     }
 }

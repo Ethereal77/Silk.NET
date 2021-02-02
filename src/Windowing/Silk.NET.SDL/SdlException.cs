@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 namespace Silk.NET.SDL
 {
     /// <summary>
-    /// Represents errors that occur within GLFW.
+    /// Represents errors that occur within SDL.
     /// </summary>
     [Serializable]
     public class SdlException : Exception

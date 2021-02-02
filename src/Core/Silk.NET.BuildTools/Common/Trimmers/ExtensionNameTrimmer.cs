@@ -10,7 +10,7 @@ using Silk.NET.BuildTools.Common.Functions;
 namespace Silk.NET.BuildTools.Common.Trimmers
 {
     /// <summary>
-    /// Trims OpenGL extension names from OpenGL functions.
+    /// Trims Vulkan extension names from Vulkan functions.
     /// </summary>
     public class ExtensionNameTrimmer : ITrimmer<Function>, ITrimmer<string>
     {
