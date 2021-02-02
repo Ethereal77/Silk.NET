@@ -17,9 +17,6 @@ namespace Silk.NET.Windowing
     /// </summary>
     public static class Window
     {
-        private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
-        private const string SdlBackendName = "SdlPlatform";
-
         private static List<Type> _platformsKeys = new List<Type>();
         private static List<IWindowPlatform> _platformsValues = new List<IWindowPlatform>();
 
@@ -50,7 +47,6 @@ namespace Silk.NET.Windowing
         private static void DoLoadFirstPartyPlatformsViaReflection()
         {
             // Try add the first-party backends
-            TryAdd(SdlBackendNamespace);
         }
 
         internal static Exception NoPlatformException => new PlatformNotSupportedException
@@ -174,22 +170,6 @@ namespace Silk.NET.Windowing
             Remove(platform);
             _platformsKeys.Insert(0, platform.GetType());
             _platformsValues.Insert(0, platform);
-        }
-
-        /// <summary>
-        /// If added, moves the SDL platform to the top of the platform list, to ensure that <see cref="Window"/>
-        /// functions check/use the provided platform first.
-        /// </summary>
-        public static void PrioritizeSdl()
-        {
-            var platform = Platforms.FirstOrDefault
-                (x => x.GetType().FullName == SdlBackendNamespace + "." + SdlBackendName);
-            if (platform is null)
-            {
-                return;
-            }
-
-            Prioritize(platform);
         }
 
         /// <summary>

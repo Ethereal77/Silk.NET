@@ -46,7 +46,6 @@ namespace Silk.NET.Input
         
         private static void DoLoadFirstPartyPlatformsViaReflection()
         {
-            TryAdd("Silk.NET.Input.Sdl");
         }
 
         /// <summary>

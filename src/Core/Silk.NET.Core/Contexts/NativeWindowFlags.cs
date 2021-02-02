@@ -10,8 +10,6 @@ namespace Silk.NET.Core.Contexts
     [Flags]
     public enum NativeWindowFlags : ulong
     {
-        Glfw = 1 << 0,
-        Sdl = 1 << 1,
         // 1 << 2 through 1 << 8 have been reserved for future windowing platforms
         Win32 = 1 << 9,
         DirectFB = 1 << 11,

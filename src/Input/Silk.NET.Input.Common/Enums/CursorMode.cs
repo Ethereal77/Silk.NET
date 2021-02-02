@@ -27,9 +27,6 @@ namespace Silk.NET.Input
         /// <summary>
         /// Cursor is invisible, and is restricted to the center of the screen.
         /// </summary>
-        /// <remarks>
-        /// Throws on SDL if used.
-        /// </remarks>
         Disabled,
 
         /// <summary>

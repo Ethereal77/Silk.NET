@@ -13,8 +13,6 @@ namespace InputTest
     {
         private static void Main()
         {
-            //Window.PrioritizeSdl();
-            
             var opts = WindowOptions.Default;
             opts.FramesPerSecond = 60;
             opts.UpdatesPerSecond = 60;

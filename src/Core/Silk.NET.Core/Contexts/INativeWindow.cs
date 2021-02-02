@@ -32,17 +32,5 @@ namespace Silk.NET.Core.Contexts
         /// in which case the underlying window is not using Vivante.
         /// </summary>
         (nint Display, nint Window)? Vivante { get; }
-
-        /// <summary>
-        /// The GLFW window handle (GLFWwindow* or WindowHandle* if using Silk.NET.GLFW). May be null, in which case the
-        /// underlying window is not using GLFW.
-        /// </summary>
-        nint? Glfw { get; }
-
-        /// <summary>
-        /// The SDL window handle (SDL_Window* or Window* if using Silk.NET.SDL). May be null, in which case the
-        /// underlying window is not using SDL.
-        /// </summary>
-        nint? Sdl { get; }
     }
 }
