@@ -1,5 +1,5 @@
-﻿// This file is part of Silk.NET.
-// 
+// This file is part of Silk.NET.
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -27,9 +27,9 @@ namespace Silk.NET.BuildTools.Bind
             {
                 return;
             }
-            
+
             using var sw = new StreamWriter(file);
-            
+
             sw.WriteLine(task.LicenseText());
             sw.WriteLine("using Silk.NET.Core.Loader;");
             sw.WriteLine();
@@ -45,9 +45,6 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
             sw.WriteLine($"        public override string MacOS => \"{task.Task.NameContainer.MacOS}\";");
-            sw.WriteLine();
-            sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Android => \"{task.Task.NameContainer.Android}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
             sw.WriteLine($"        public override string IOS => \"{task.Task.NameContainer.IOS}\";");
@@ -79,7 +76,7 @@ namespace Silk.NET.BuildTools.Bind
                     Console.WriteLine($"Warning: No functions, writing of class \"{@class.ClassName}\" skipped...");
                     continue;
                 }
-            
+
                 if (project.IsRoot)
                 {
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs"));
@@ -114,7 +111,7 @@ namespace Silk.NET.BuildTools.Bind
                     foreach (var function in allFunctions)
                     {
                         AddInjectionAttributes(function, task);
-                        
+
                         if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
                         {
                             sw.WriteLine($"#if {function.PreprocessorConditions}");
@@ -210,12 +207,12 @@ namespace Silk.NET.BuildTools.Bind
                         }
 
                         sw2u.WriteLine("        }");
-                        
+
                         if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
                         {
                             sw2u.WriteLine($"#endif");
                         }
-                        
+
                         sw2u.WriteLine();
                     }
 
@@ -351,7 +348,7 @@ namespace Silk.NET.BuildTools.Bind
                                     sw.WriteLine($"        {line}");
                                 }
                             }
-                            
+
                             if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
                             {
                                 sw.WriteLine($"#endif");
@@ -405,7 +402,7 @@ namespace Silk.NET.BuildTools.Bind
                             }
 
                             sw2u.WriteLine("        }");
-                            
+
                             if (!string.IsNullOrWhiteSpace(overload.Base.PreprocessorConditions))
                             {
                                 sw2u.WriteLine($"#endif");

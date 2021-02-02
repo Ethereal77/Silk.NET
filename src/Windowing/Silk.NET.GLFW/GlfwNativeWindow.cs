@@ -66,7 +66,6 @@ namespace Silk.NET.GLFW
         public (nint Window, uint Framebuffer, uint Colorbuffer, uint ResolveFramebuffer)? UIKit { get; }
         public (nint Hwnd, nint HDC, nint HInstance)? Win32 { get; }
         public (nint Display, nint Window)? Vivante { get; }
-        public (nint Window, nint Surface)? Android { get; }
         public nint? Glfw { get; }
         public nint? Sdl { get; }
     }

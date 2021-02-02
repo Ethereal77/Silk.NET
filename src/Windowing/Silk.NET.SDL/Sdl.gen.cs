@@ -14489,30 +14489,6 @@ namespace Silk.NET.SDL
         public partial void IPhoneSetEventPump(SdlBool enabled);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 111, Column 32 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_AndroidGetJNIEnv")]
-        public unsafe partial void* AndroidGetJNIEnv();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 121, Column 32 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_AndroidGetActivity")]
-        public unsafe partial void* AndroidGetActivity();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 147, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_GetAndroidSDKVersion")]
-        public partial int GetAndroidSDKVersion();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 152, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_IsAndroidTV")]
-        public partial SdlBool IsAndroidTV();
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 157, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_IsChromebook")]
@@ -14523,42 +14499,6 @@ namespace Silk.NET.SDL
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_IsDeXMode")]
         public partial SdlBool IsDeXMode();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 167, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_AndroidBackButton")]
-        public partial void AndroidBackButton();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 182, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
-        public unsafe partial byte* AndroidGetInternalStoragePath();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 182, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
-        public partial string AndroidGetInternalStoragePathS();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 191, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_AndroidGetExternalStorageState")]
-        public partial int AndroidGetExternalStorageState();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
-        public unsafe partial byte* AndroidGetExternalStoragePath();
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 199, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
-        public partial string AndroidGetExternalStoragePathS();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 264, Column 41 in build/submodules/SDL-mirror/include\\SDL_system.h")]

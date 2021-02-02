@@ -20,7 +20,6 @@ namespace Silk.NET.Core.Contexts
         UIKit = 1 << 13,
         Wayland = 1 << 14,
         WinRT = 1 << 15,
-        Android = 1 << 16,
         Vivante = 1 << 17,
         OS2 = 1 << 18,
         Haiku = 1 << 19

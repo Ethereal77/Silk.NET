@@ -57,12 +57,6 @@ namespace Silk.NET.Core.Contexts
         (nint Display, nint Window)? Vivante { get; }
 
         /// <summary>
-        /// The Android native window pointer (ANativeWindow*) and EGL surface (EGLSurface). May be null, in which case
-        /// the underlying window is not using Android.
-        /// </summary>
-        (nint Window, nint Surface)? Android { get; }
-
-        /// <summary>
         /// The GLFW window handle (GLFWwindow* or WindowHandle* if using Silk.NET.GLFW). May be null, in which case the
         /// underlying window is not using GLFW.
         /// </summary>

@@ -140,16 +140,8 @@ namespace Silk.NET.Vulkan
         XcbSurfaceCreateInfoKhr = 1000005000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR")]
         WaylandSurfaceCreateInfoKhr = 1000006000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_ANDROID_SURFACE_CREATE_INFO_KHR")]
-        AndroidSurfaceCreateInfoKhr = 1000008000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR")]
         Win32SurfaceCreateInfoKhr = 1000009000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_NATIVE_BUFFER_ANDROID")]
-        NativeBufferAndroid = 1000010000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_SWAPCHAIN_IMAGE_CREATE_INFO_ANDROID")]
-        SwapchainImageCreateInfoAndroid = 1000010001,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENTATION_PROPERTIES_ANDROID")]
-        PhysicalDevicePresentationPropertiesAndroid = 1000010002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEBUG_REPORT_CALLBACK_CREATE_INFO_EXT")]
         DebugReportCallbackCreateInfoExt = 1000011000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEBUG_REPORT_CREATE_INFO_EXT")]
@@ -446,18 +438,6 @@ namespace Silk.NET.Vulkan
         DebugUtilsMessengerCallbackDataExt = 1000128003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT")]
         DebugUtilsMessengerCreateInfoExt = 1000128004,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_USAGE_ANDROID")]
-        AndroidHardwareBufferUsageAndroid = 1000129000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_PROPERTIES_ANDROID")]
-        AndroidHardwareBufferPropertiesAndroid = 1000129001,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_ANDROID_HARDWARE_BUFFER_FORMAT_PROPERTIES_ANDROID")]
-        AndroidHardwareBufferFormatPropertiesAndroid = 1000129002,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_ANDROID_HARDWARE_BUFFER_INFO_ANDROID")]
-        ImportAndroidHardwareBufferInfoAndroid = 1000129003,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_GET_ANDROID_HARDWARE_BUFFER_INFO_ANDROID")]
-        MemoryGetAndroidHardwareBufferInfoAndroid = 1000129004,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_EXTERNAL_FORMAT_ANDROID")]
-        ExternalFormatAndroid = 1000129005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SAMPLER_FILTER_MINMAX_PROPERTIES_EXT")]
         PhysicalDeviceSamplerFilterMinmaxPropertiesExt = 1000130000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SAMPLER_REDUCTION_MODE_CREATE_INFO_EXT")]

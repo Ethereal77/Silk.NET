@@ -24,11 +24,10 @@
             - Fix zero-length string allocation resulting in an IndexOutOfRangeException exception by clamping the allocation length to 1, resolving #396
             - Fix unreasonably small delta times when running a window with OpenGL V-Sync enabled
             - Fix faulty addition in Silk.NET.Maths where (u)ints were produced by (s)byte and (u)short addition, resulting in an invalid cast
-            - Fix malformed XML in MSBuild targets included by Silk.NET.Windowing.Sdl.Android, resolving #405
 
             This should be treated as an "emergency patch" and you should update as soon as reasonably practicable. Some of the bugs in 2.0 are fatal in some workloads.
         </PackageReleaseNotes>
-        <PackageTags>OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
+        <PackageTags>OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/Ultz/Silk.NET</RepositoryUrl>

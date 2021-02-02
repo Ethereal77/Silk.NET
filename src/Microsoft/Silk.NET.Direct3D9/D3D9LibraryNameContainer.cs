@@ -19,9 +19,6 @@ namespace Silk.NET.Direct3D9
         public override string MacOS => "libd3d9.dylib";
 
         /// <inheritdoc />
-        public override string Android => "libd3d9.so";
-
-        /// <inheritdoc />
         public override string IOS => "__Internal";
 
         /// <inheritdoc />

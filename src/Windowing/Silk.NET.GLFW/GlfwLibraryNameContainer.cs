@@ -19,9 +19,6 @@ namespace Silk.NET.GLFW
         public override string MacOS => "libglfw.3.dylib";
 
         /// <inheritdoc />
-        public override string Android => Linux;
-
-        /// <inheritdoc />
         public override string IOS => MacOS;
 
         /// <inheritdoc />

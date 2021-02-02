@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -17,9 +17,6 @@ namespace Silk.NET.Assimp
 
         /// <inheritdoc />
         public override string MacOS => "libassimp.5.dylib";
-
-        /// <inheritdoc />
-        public override string Android => "libassimp.so.5";
 
         /// <inheritdoc />
         public override string IOS => "__Internal";

@@ -19,9 +19,6 @@ namespace Silk.NET.OpenAL
         public override string MacOS => "/System/Library/Frameworks/OpenAL.framework/OpenAL";
 
         /// <inheritdoc />
-        public override string Android => Linux;
-
-        /// <inheritdoc />
         public override string IOS => MacOS;
 
         /// <inheritdoc />

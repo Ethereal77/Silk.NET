@@ -122,10 +122,6 @@ namespace Silk.NET.OpenXR
         ErrorLocalizedNameInvalid = -49,
         [NativeName("Name", "XR_ERROR_GRAPHICS_REQUIREMENTS_CALL_MISSING")]
         ErrorGraphicsRequirementsCallMissing = -50,
-        [NativeName("Name", "XR_ERROR_ANDROID_THREAD_SETTINGS_ID_INVALID_KHR")]
-        ErrorAndroidThreadSettingsIDInvalidKhr = -1000003000,
-        [NativeName("Name", "XR_ERROR_ANDROID_THREAD_SETTINGS_FAILURE_KHR")]
-        ErrorAndroidThreadSettingsFailureKhr = -1000003001,
         [NativeName("Name", "XR_ERROR_CREATE_SPATIAL_ANCHOR_FAILED_MSFT")]
         ErrorCreateSpatialAnchorFailedMsft = -1000039001,
         [NativeName("Name", "XR_ERROR_SECONDARY_VIEW_CONFIGURATION_TYPE_NOT_ENABLED_MSFT")]

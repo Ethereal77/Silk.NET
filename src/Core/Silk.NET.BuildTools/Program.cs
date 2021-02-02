@@ -234,7 +234,6 @@ namespace Silk.NET.BuildTools
                     NameContainer = new NameContainer
                     {
                         ClassName = "MyNameContainer",
-                        Android = "libapi.so",
                         IOS = "libapi.dylib",
                         Linux = "libapi.so",
                         MacOS = "libapi.dylib",

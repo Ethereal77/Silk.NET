@@ -37,12 +37,6 @@ namespace Silk.NET.BuildTools.Common
         public string MacOS { get; set; }
 
         /// <summary>
-        /// Gets or sets the Android library name.
-        /// </summary>
-        [JsonProperty("android")]
-        public string Android { get; set; }
-
-        /// <summary>
         /// Gets or sets the iOS library name.
         /// </summary>
         [JsonProperty("iOS")]

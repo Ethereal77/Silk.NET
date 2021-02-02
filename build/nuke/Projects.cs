@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -18,7 +18,6 @@ public static class Projects
     public static readonly IReadOnlyList<FeatureSet> FeatureSets = new[]
     {
         new FeatureSet("iOS", true, "Silk.NET.Windowing.Sdl.iOS", "TriangleIOS"),
-        new FeatureSet("Android", true, "Silk.NET.Windowing.Sdl.Android", "TriangleDroid", "TriangleDroidUvExperiment"),
         new FeatureSet("NUKE", false, "Silk.NET.NUKE", "Silk.NET.NUKE.SshAgent"), 
     };
 

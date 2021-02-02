@@ -31,8 +31,6 @@ namespace Silk.NET.Vulkan
         ExternalMemoryHandleTypeD3D12ResourceBit = 64,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_DMA_BUF_BIT_EXT")]
         ExternalMemoryHandleTypeDmaBufBitExt = 512,
-        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID")]
-        ExternalMemoryHandleTypeAndroidHardwareBufferBitAndroid = 1024,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_ALLOCATION_BIT_EXT")]
         ExternalMemoryHandleTypeHostAllocationBitExt = 128,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY_BIT_EXT")]

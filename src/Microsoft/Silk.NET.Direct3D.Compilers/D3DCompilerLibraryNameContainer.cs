@@ -19,9 +19,6 @@ namespace Silk.NET.Direct3D.Compilers
         public override string MacOS => "libD3DCompiler_47.dylib";
 
         /// <inheritdoc />
-        public override string Android => "libD3DCompiler_47.so";
-
-        /// <inheritdoc />
         public override string IOS => "__Internal";
 
         /// <inheritdoc />

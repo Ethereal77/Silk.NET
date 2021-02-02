@@ -182,24 +182,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 return SwapchainSource.CreateWayland(view.Wayland.Value.Display, view.Wayland.Value.Surface);
             }
 
-            if (view.Android.HasValue)
-            {
-                return SwapchainSource.CreateAndroidSurface
-                    (view.Android.Value.Surface, AndroidSupport.JNIEnv ?? ThrowJNIEnv());
-
-                static nint ThrowJNIEnv()
-                {
-                    throw new InvalidOperationException
-                    (
-                        "Android applications must set the AndroidSupport.JNIEnv property" +
-                        " (sourced from Android.Runtime.JNIEnv.Handle property in " +
-                        "Mono.Android) to create swapchains from Android views."
-                    );
-
-                    return default;
-                }
-            }
-
             if (view.Cocoa.HasValue)
             {
                 return SwapchainSource.CreateNSWindow(view.Cocoa.Value);

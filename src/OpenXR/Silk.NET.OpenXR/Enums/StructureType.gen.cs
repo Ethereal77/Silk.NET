@@ -116,8 +116,6 @@ namespace Silk.NET.OpenXR
         TypeInputSourceLocalizedNameGetInfo = 63,
         [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_CUBE_KHR")]
         TypeCompositionLayerCubeKhr = 1000006000,
-        [NativeName("Name", "XR_TYPE_INSTANCE_CREATE_INFO_ANDROID_KHR")]
-        TypeInstanceCreateInfoAndroidKhr = 1000008000,
         [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_DEPTH_INFO_KHR")]
         TypeCompositionLayerDepthInfoKhr = 1000010000,
         [NativeName("Name", "XR_TYPE_VULKAN_SWAPCHAIN_FORMAT_LIST_CREATE_INFO_KHR")]
@@ -148,8 +146,6 @@ namespace Silk.NET.OpenXR
         TypeSwapchainImageOpenglKhr = 1000023004,
         [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_OPENGL_KHR")]
         TypeGraphicsRequirementsOpenglKhr = 1000023005,
-        [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_OPENGL_ES_ANDROID_KHR")]
-        TypeGraphicsBindingOpenglESAndroidKhr = 1000024001,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_OPENGL_ES_KHR")]
         TypeSwapchainImageOpenglESKhr = 1000024002,
         [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_OPENGL_ES_KHR")]
@@ -242,12 +238,8 @@ namespace Silk.NET.OpenXR
         TypeViewConfigurationViewFovEpic = 1000059000,
         [NativeName("Name", "XR_TYPE_HOLOGRAPHIC_WINDOW_ATTACHMENT_MSFT")]
         TypeHolographicWindowAttachmentMsft = 1000063000,
-        [NativeName("Name", "XR_TYPE_ANDROID_SURFACE_SWAPCHAIN_CREATE_INFO_FB")]
-        TypeAndroidSurfaceSwapchainCreateInfoFB = 1000070000,
         [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_ANALOG_THRESHOLD_VALVE")]
         TypeInteractionProfileAnalogThresholdValve = 1000079000,
-        [NativeName("Name", "XR_TYPE_LOADER_INIT_INFO_ANDROID_KHR")]
-        TypeLoaderInitInfoAndroidKhr = 1000089000,
         [NativeName("Name", "XR_TYPE_VULKAN_INSTANCE_CREATE_INFO_KHR")]
         TypeVulkanInstanceCreateInfoKhr = 1000090000,
         [NativeName("Name", "XR_TYPE_VULKAN_DEVICE_CREATE_INFO_KHR")]

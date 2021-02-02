@@ -19,9 +19,6 @@ namespace Silk.NET.OpenGL
         public override string MacOS => "/System/Library/Frameworks/OpenGL.framework/OpenGL";
 
         /// <inheritdoc />
-        public override string Android => "libGL.so.1";
-
-        /// <inheritdoc />
         public override string IOS => "/System/Library/Frameworks/OpenGL.framework/OpenGL";
 
         /// <inheritdoc />

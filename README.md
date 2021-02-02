@@ -27,7 +27,7 @@ As well as some helpers from the community:
 
 - Make sure you have at least the .NET 5 SDK installed, preferably with Visual Studio's .NET Framework and Xamarin workloads too.
 - Clone the repository
-- Run build.sh, build.cmd, build.ps1, or `nuke build`. To build for iOS and Android, add the `--feature-sets ios android` arguments.
+- Run build.sh, build.cmd, build.ps1, or `nuke build`. To build for iOS, add the `--feature-sets ios` arguments.
 
 # Contributing
 

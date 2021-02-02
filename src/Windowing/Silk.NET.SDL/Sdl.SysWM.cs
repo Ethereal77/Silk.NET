@@ -20,7 +20,6 @@ namespace Silk.NET.SDL
         Wayland,
         Mir, /* no longer available, left for API/ABI compatibility. Remove in 2.1! */
         WinRT,
-        Android,
         Vivante,
         OS2,
         Haiku
@@ -91,7 +90,6 @@ namespace Silk.NET.SDL
         [FieldOffset(0)] public SysWMInfoUIKit UIKit;
         [FieldOffset(0)] public SysWMInfoWayland Wayland;
         [FieldOffset(0)] public SysWMInfoMir Mir;
-        [FieldOffset(0)] public SysWMInfoAndroid Android;
         [FieldOffset(0)] public SysWMInfoVivante Vivante;
 
         /* Make sure this union is always 64 bytes (8 64-bit pointers). */
@@ -167,12 +165,6 @@ namespace Silk.NET.SDL
     {
         public unsafe void* Display;
         public unsafe void* Window;
-    }
-
-    public struct SysWMInfoAndroid
-    {
-        public unsafe void* Window;
-        public unsafe void* Surface;
     }
 
 // TODO This is currently integrated in Sdl.gen.cs but it should not be because BuildTools will overwrite it in there.

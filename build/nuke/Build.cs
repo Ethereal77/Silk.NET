@@ -64,7 +64,7 @@ class Build : NukeBuild
     bool HasProcessedSolutions { get; set; }
     bool HasProcessedProperties { get; set; }
 
-    [Parameter("The feature sets to build - Could include Core, iOS, or Android. Any projects that aren't " +
+    [Parameter("The feature sets to build - Could include Core or iOS. Any projects that aren't " +
                "categorized into a feature set will always be built.")]
     string[] FeatureSets = {"core"};
 
@@ -167,17 +167,6 @@ class Build : NukeBuild
 
             Directory.CreateDirectory(RootDirectory / "build" / "output_packages");
             
-            if (FeatureSets.Any(x => x.Equals("android", StringComparison.InvariantCultureIgnoreCase)))
-            {
-                var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
-                using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                    ? ProcessTasks.StartProcess("bash", "-c \"./gradlew clean\"", silkDroid)
-                    : ProcessTasks.StartProcess("cmd", "/c \".\\gradlew clean\"", silkDroid);
-                process.AssertZeroExitCode();
-                return process.Output;
-            }
-
-            Logger.Warn("Skipping gradlew clean because Android hasn't been specified as a feature set.");
             return default;
         });
 
@@ -281,59 +270,12 @@ class Build : NukeBuild
             }
         );
 
-    Target BuildLibSilkDroid => _ => _
-        .DependsOn(Clean)
-        .Executes
-        (
-            () =>
-            {
-                if (!FeatureSets.Any(x => x.Equals("android", StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    Logger.Warn("Skipping BuildLibSilkDroid because Android hasn't been specified as a feature set.");
-                    return default;
-                }
-                
-                var sdlMirror = RootDirectory / "build" / "submodules" / "SDL-mirror";
-                var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
-                var xcopy = new (string, string)[]
-                {
-                    (sdlMirror / "android-project" / "app" / "src" / "main" / "java",
-                        silkDroid / "app" / "src" / "main" / "java"),
-                    (sdlMirror, silkDroid / "app" / "jni" / "SDL2")
-                };
-
-                foreach (var (from, to) in xcopy)
-                {
-                    if (!Directory.Exists(from))
-                    {
-                        ControlFlow.Fail($"\"{from}\" does not exist (did you forget to recursively clone the repo?)");
-                    }
-                    
-                    CopyDirectoryRecursively(from, to, DirectoryExistsPolicy.Merge, FileExistsPolicy.Overwrite);
-                }
-
-                using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                    ? ProcessTasks.StartProcess("bash", "-c \"./gradlew build\"", silkDroid)
-                    : ProcessTasks.StartProcess("cmd", "/c \".\\gradlew build\"", silkDroid);
-                process.AssertZeroExitCode();
-                var ret = process.Output;
-                CopyFile
-                (
-                    silkDroid / "app" / "build" / "outputs" / "aar" / "app-release.aar",
-                    SourceDirectory / "Windowing" / "Android" / "Silk.NET.Windowing.Sdl.Android" / "Jars" /
-                    "app-release.aar",
-                    FileExistsPolicy.Overwrite
-                );
-                return ret;
-            }
-        );
-
     Target FullCompile => _ => _
-        .DependsOn(BuildLibSilkDroid, RegenerateBindings, Compile);
+        .DependsOn(RegenerateBindings, Compile);
 
     Target Pack => _ => _
         .DependsOn(Clean, Restore)
-        .After(RegenerateBindings, BuildLibSilkDroid)
+        .After(RegenerateBindings)
         .Executes(() =>
         {
             if (HasDesktopMsBuild)
@@ -363,7 +305,7 @@ class Build : NukeBuild
         });
 
     Target FullPack => _ => _
-        .DependsOn(BuildLibSilkDroid, RegenerateBindings, Pack);
+        .DependsOn(RegenerateBindings, Pack);
 
     Target PushToNuGet => _ => _
         .DependsOn(Pack)

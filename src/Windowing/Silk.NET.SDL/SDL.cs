@@ -8,10 +8,8 @@ using Silk.NET.Core.Contexts;
 
 namespace Silk.NET.SDL
 {
-    // TODO for Silk.NET 3.0:
-    // ideally we'd only use override 1 on android, but we can't really do that until it's better supported in .net 6
+    // TODO: for Silk.NET 3.0:
     // (we'd need a preprocessor directive which is only available in xamarin)
-    [PInvokeOverride(1, "libSDL2.so")]
     [PInvokeOverride(0, "__Internal")]
     public partial class Sdl
     {
@@ -126,9 +124,6 @@ namespace Silk.NET.SDL
         public const string HintImeInternalEditing =
             "SDL_IME_INTERNAL_EDITING";
 
-        public const string HintAndroidSeparateMouseAndTouch =
-            "SDL_ANDROID_SEPARATE_MOUSE_AND_TOUCH";
-
         public const string HintEmscriptenKeyboardElement =
             "SDL_EMSCRIPTEN_KEYBOARD_ELEMENT";
 
@@ -152,12 +147,6 @@ namespace Silk.NET.SDL
 
         public const string HintVideoX11NetWmPing =
             "SDL_VIDEO_X11_NET_WM_PING";
-
-        public const string HintAndroidApkExpansionMainFileVersion =
-            "SDL_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION";
-
-        public const string HintAndroidApkExpansionPatchFileVersion =
-            "SDL_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION";
 
         /// <remarks>Only available in 2.0.5 or higher.</remarks>
         public const string HintMouseFocusClickthrough =
@@ -229,18 +218,12 @@ namespace Silk.NET.SDL
         public const string HintEnableSteamControllers =
             "SDL_ENABLE_STEAM_CONTROLLERS";
 
-        public const string HintAndroidTrapBackButton =
-            "SDL_ANDROID_TRAP_BACK_BUTTON";
-
         /// <remarks>Only available in 2.0.10 or higher.</remarks>
         public const string HintMouseTouchEvents =
             "SDL_MOUSE_TOUCH_EVENTS";
 
         public const string HintGamecontrollerconfigFile =
             "SDL_GAMECONTROLLERCONFIG_FILE";
-
-        public const string HintAndroidBlockOnPause =
-            "SDL_ANDROID_BLOCK_ON_PAUSE";
 
         public const string HintRenderBatching =
             "SDL_RENDER_BATCHING";
