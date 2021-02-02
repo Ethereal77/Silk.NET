@@ -152,7 +152,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 GraphicsBackend.Direct3D11 => CreateDefaultD3D11GraphicsDevice(options, window),
                 GraphicsBackend.Vulkan => CreateVulkanGraphicsDevice(options, window),
                 GraphicsBackend.OpenGL => CreateDefaultOpenGlGraphicsDevice(options, window, preferredBackend),
-                GraphicsBackend.Metal => CreateMetalGraphicsDevice(options, window),
                 GraphicsBackend.OpenGLES => CreateDefaultOpenGlGraphicsDevice(options, window, preferredBackend),
                 _ => throw new VeldridException("Invalid GraphicsBackend: " + preferredBackend)
             };
@@ -170,16 +169,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             if (view.Win32.HasValue)
             {
                 return SwapchainSource.CreateWin32(view.Win32.Value.Hwnd, view.Win32.Value.HInstance);
-            }
-
-            if (view.Cocoa.HasValue)
-            {
-                return SwapchainSource.CreateNSWindow(view.Cocoa.Value);
-            }
-
-            if (view.UIKit.HasValue)
-            {
-                return SwapchainSource.CreateUIView(view.UIKit.Value.Window);
             }
 
             Throw();
@@ -225,29 +214,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             return gd;
         }
 
-        private static unsafe GraphicsDevice CreateMetalGraphicsDevice(GraphicsDeviceOptions options, IView window)
-            => CreateMetalGraphicsDevice(options, window, false);
-
-        private static unsafe GraphicsDevice CreateMetalGraphicsDevice
-        (
-            GraphicsDeviceOptions options,
-            IView window,
-            bool colorSrgb
-        )
-        {
-            var source = GetSwapchainSource(window.Native);
-            var swapchainDesc = new SwapchainDescription
-            (
-                source,
-                (uint) window.Size.X, (uint) window.Size.Y,
-                options.SwapchainDepthFormat,
-                options.SyncToVerticalBlank,
-                colorSrgb
-            );
-
-            return GraphicsDevice.CreateMetal(options, swapchainDesc);
-        }
-
         /// <summary>
         /// Gets the default backend given the current runtime information.
         /// </summary>
@@ -257,13 +223,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 return GraphicsBackend.Direct3D11;
-            }
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            {
-                return GraphicsDevice.IsBackendSupported(GraphicsBackend.Metal)
-                    ? GraphicsBackend.Metal
-                    : GraphicsBackend.OpenGL;
             }
 
             return GraphicsDevice.IsBackendSupported(GraphicsBackend.Vulkan)
@@ -280,7 +239,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         {
             GraphicsBackend.Direct3D11 => GraphicsAPI.None, GraphicsBackend.Vulkan => GraphicsAPI.DefaultVulkan,
             GraphicsBackend.OpenGL => new(ContextAPI.OpenGL, new(GlMajor, GlMinor)),
-            GraphicsBackend.Metal => GraphicsAPI.None,
             GraphicsBackend.OpenGLES => new(ContextAPI.OpenGLES, new(GlesMajor, GlesMinor)),
             _ => throw new ArgumentOutOfRangeException()
         };

@@ -17,26 +17,6 @@ namespace Silk.NET.GLFW
         /// <see cref="IGlfw.GetJoystickHats" />.
         /// Set this with <see cref="InitHint" />.
         /// </summary>
-        JoystickHatButtons = 0x00050001,
-
-        /// <summary>
-        /// Used to specify whether to set the current directory to the application to the Contents/Resources
-        /// subdirectory of the application's bundle, if present.
-        /// Set this with <see cref="InitHint" />.
-        /// </summary>
-        /// <remarks>
-        /// Only affects macOS; no effect on other platforms.
-        /// </remarks>
-        CocoaChdirResources = 0x00051001,
-
-        /// <summary>
-        /// Used to specify whether to create a basic menu bar, either from a nib or manually,
-        /// when the first window is created, which is when AppKit is initialized.
-        /// Set this with <see cref="InitHint" />.
-        /// </summary>
-        /// <remarks>
-        /// Only affects macOS; no effect on other platforms.
-        /// </remarks>
-        CocoaMenubar = 0x00051002
+        JoystickHatButtons = 0x00050001
     }
 }

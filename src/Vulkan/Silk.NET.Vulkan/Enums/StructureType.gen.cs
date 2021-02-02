@@ -418,8 +418,6 @@ namespace Silk.NET.Vulkan
         DisplayPlaneInfo2Khr = 1000121003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DISPLAY_PLANE_CAPABILITIES_2_KHR")]
         DisplayPlaneCapabilities2Khr = 1000121004,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_MACOS_SURFACE_CREATE_INFO_MVK")]
-        MacosSurfaceCreateInfoMvk = 1000123000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_DEDICATED_REQUIREMENTS_KHR")]
         MemoryDedicatedRequirementsKhr = 1000127000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_DEDICATED_ALLOCATE_INFO_KHR")]
@@ -710,8 +708,6 @@ namespace Silk.NET.Vulkan
         ImagepipeSurfaceCreateInfoFuchsia = 1000214000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TERMINATE_INVOCATION_FEATURES_KHR")]
         PhysicalDeviceShaderTerminateInvocationFeaturesKhr = 1000215000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT")]
-        MetalSurfaceCreateInfoExt = 1000217000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_FEATURES_EXT")]
         PhysicalDeviceFragmentDensityMapFeaturesExt = 1000218000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_PROPERTIES_EXT")]

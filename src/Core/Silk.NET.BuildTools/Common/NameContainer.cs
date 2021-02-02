@@ -25,12 +25,6 @@ namespace Silk.NET.BuildTools.Common
         public string Windows86 { get; set; }
 
         /// <summary>
-        /// Gets or sets the OSX library name.
-        /// </summary>
-        [JsonProperty("osx-x64")]
-        public string MacOS { get; set; }
-
-        /// <summary>
         /// Gets or sets the class name of the output name container.
         /// </summary>
         [JsonProperty("className")]

@@ -54,14 +54,8 @@ namespace Silk.NET.OpenGL.Legacy
         TextureCompressionHint = 0x84EF,
         [NativeName("Name", "GL_TEXTURE_COMPRESSION_HINT_ARB")]
         TextureCompressionHintArb = 0x84EF,
-        [NativeName("Name", "GL_VERTEX_ARRAY_STORAGE_HINT_APPLE")]
-        VertexArrayStorageHintApple = 0x851F,
         [NativeName("Name", "GL_MULTISAMPLE_FILTER_HINT_NV")]
         MultisampleFilterHintNV = 0x8534,
-        [NativeName("Name", "GL_TRANSFORM_HINT_APPLE")]
-        TransformHintApple = 0x85B1,
-        [NativeName("Name", "GL_TEXTURE_STORAGE_HINT_APPLE")]
-        TextureStorageHintApple = 0x85BC,
         [NativeName("Name", "GL_FRAGMENT_SHADER_DERIVATIVE_HINT")]
         FragmentShaderDerivativeHint = 0x8B8B,
         [NativeName("Name", "GL_FRAGMENT_SHADER_DERIVATIVE_HINT_ARB")]

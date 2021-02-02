@@ -37,21 +37,6 @@ namespace Silk.NET.SDL
                     Win32 = (info.Info.Win.Hwnd, info.Info.Win.HDC, info.Info.Win.HInstance);
                     break;
                 }
-                case SysWMType.Cocoa:
-                {
-                    Kind |= NativeWindowFlags.Cocoa;
-                    Cocoa = (nint) info.Info.Cocoa.Window;
-                    break;
-                }
-                case SysWMType.UIKit:
-                {
-                    Kind |= NativeWindowFlags.UIKit;
-                    UIKit = ((nint) info.Info.UIKit.Window,
-                        info.Info.UIKit.Framebuffer,
-                        info.Info.UIKit.Colorbuffer,
-                        info.Info.UIKit.ResolveFramebuffer);
-                    break;
-                }
                 case SysWMType.WinRT:
                 {
                     Kind |= NativeWindowFlags.WinRT;
@@ -68,9 +53,7 @@ namespace Silk.NET.SDL
         }
 
         public NativeWindowFlags Kind { get; }
-        public nint? Cocoa { get; }
         public nint? WinRT { get; }
-        public (nint Window, uint Framebuffer, uint Colorbuffer, uint ResolveFramebuffer)? UIKit { get; }
         public (nint Hwnd, nint HDC, nint HInstance)? Win32 { get; }
         public (nint Display, nint Window)? Vivante { get; }
         public nint? Glfw { get; }

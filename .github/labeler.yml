@@ -28,9 +28,6 @@ area-Vulkan:
 area-DirectX/Windows:
 - any: ['src/Microsoft/**/*']
 
-area-Metal:
-- any: ['src/Apple/Metal/**/*']
-
 area-FEMFX:
 - any: ['src/AMD/FEMFX/**/*']
 

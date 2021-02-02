@@ -13,9 +13,6 @@ namespace Silk.NET.OpenGL
     internal class GLCoreLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string MacOS => "/System/Library/Frameworks/OpenGL.framework/OpenGL";
-
-        /// <inheritdoc />
         public override string Windows64 => "opengl32.dll";
 
         /// <inheritdoc />

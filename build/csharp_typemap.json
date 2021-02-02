@@ -102,7 +102,6 @@
     "_cl_context": "nint",
     "_cl_event": "nint",
     "HMONITOR": "nint",
-    "CAMetalLayer": "nint",
     "AHardwareBuffer": "nint",
     "zx_handle_t": "nint",
     "GgpFrameToken": "nint",

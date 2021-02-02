@@ -776,9 +776,6 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window to request attention to.</param>
         /// <remarks>
         /// <para>
-        /// macOS: Attention is requested to the application as a whole, not the specific window.
-        /// </para>
-        /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
@@ -1884,22 +1881,6 @@ namespace Silk.NET.GLFW
         /// Windows: The context to share resources with must not be current on any other thread.
         /// </para>
         /// <para>
-        /// OS X: The GLFW window has no icon, as it is not a document window, but the dock icon will be the same as the
-        /// application bundle's icon.
-        /// For more information on bundles, see the Bundle Programming Guide in the Mac Developer Library.
-        /// </para>
-        /// <para>
-        /// OS X: The first time a window is created the menu bar is populated with common commands like Hide, Quit and About.
-        ///       The About entry opens a minimal about dialog with information from the application's bundle.
-        ///       The menu bar can be disabled with a compile-time option.
-        /// </para>
-        /// <para>
-        /// OS X: On OS X 10.10 and later the window frame will not be rendered at full resolution on Retina displays
-        ///       unless the NSHighResolutionCapable key is enabled in the application bundle's Info.plist.
-        ///       For more information, see High Resolution Guidelines for OS X in the Mac Developer Library.
-        ///       The GLFW test and example programs use a custom Info.plist template for this, which can be found as
-        /// CMake/MacOSXBundleInfo.plist.in in the source tree.
-        /// </para>
         /// This function must not be called from a callback.
         /// </para>
         /// <para>
@@ -3078,11 +3059,6 @@ namespace Silk.NET.GLFW
         /// <para>
         /// The specified image data is copied before this function returns.
         /// </para>
-        /// <para>
-        /// OS X: The GLFW window has no icon, as it is not a document window, so this function does nothing.
-        /// The dock icon will be the same as the application bundle's icon. For more information on bundles,
-        /// see the Bundle Programming Guide in the Mac Developer Library.
-        /// </para>
         /// </remarks>
         public unsafe partial void SetWindowIcon(WindowHandle* window, int count, Image* images);
 
@@ -3666,9 +3642,6 @@ namespace Silk.NET.GLFW
         /// as it is an error to specify an extension more than once in the <c>VkInstanceCreateInfo</c> struct.
         /// </para>
         /// <para>
-        /// macOS: This function currently only supports the <c>VK_MVK_macos_surface</c> extension from MoltenVK.
-        /// </para>
-        /// <para>
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.ApiUnavailable" />.
         /// </para>
         /// <para>
@@ -3755,10 +3728,6 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.ApiUnavailable" />.
         /// </para>
         /// <para>
-        /// macOS: This function currently always returns <c>true</c>, as the <c>VK_MVK_macos_surface</c>
-        /// extension does not provide a <c>vkGetPhysicalDevice*PresentationSupport</c> type function.
-        /// </para>
-        /// <para>
         /// This function may be called from any thread.
         /// For synchronization details of Vulkan objects, see the Vulkan specification.
         /// </para>
@@ -3807,13 +3776,6 @@ namespace Silk.NET.GLFW
         /// If an error occurs before the creation call is made, GLFW returns the Vulkan error code most
         /// appropriate for the error. Appropriate use of <see cref="VulkanSupported" /> and
         /// <see cref="GetRequiredInstanceExtensions" /> should eliminate almost all occurrences of these errors.
-        /// </para>
-        /// <para>
-        /// macOS: This function currently only supports the <c>VK_MVK_macos_surface</c> extension from MoltenVK.
-        /// </para>
-        /// <para>
-        /// macOS: This function creates and sets a <c>CAMetalLayer</c> instance for the window content view,
-        /// which is required for MoltenVK to function.
         /// </para>
         /// <para>
         /// This function may be called from any thread.

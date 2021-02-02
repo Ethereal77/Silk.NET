@@ -8,7 +8,6 @@ namespace Silk.NET.Core.Loader
     {
         Unknown,
         Windows64,
-        Windows86,
-        MacOS
+        Windows86
     }
 }

@@ -13,9 +13,6 @@ namespace Silk.NET.GLFW
     internal class GlfwLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string MacOS => "libglfw.3.dylib";
-
-        /// <inheritdoc />
         public override string Windows64 => "glfw3.dll";
 
         /// <inheritdoc />

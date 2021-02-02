@@ -30,19 +30,9 @@ namespace Silk.NET.GLFW
                 Win32 = (hwnd, Win32GetDC(hwnd), Win32GetWindowLongPtr(hwnd, GwlpHInstance));
                 return;
             }
-
-            var getCocoaId = api.Context.GetProcAddress("glfwGetCocoaWindow");
-            if (getCocoaId != default)
-            {
-                Kind |= NativeWindowFlags.Cocoa;
-                Cocoa = (nint) ((delegate* unmanaged[Cdecl]<WindowHandle*, void*>)getCocoaId)(window);
-                return;
-            }
         }
         public NativeWindowFlags Kind { get; }
-        public nint? Cocoa { get; }
         public nint? WinRT { get; }
-        public (nint Window, uint Framebuffer, uint Colorbuffer, uint ResolveFramebuffer)? UIKit { get; }
         public (nint Hwnd, nint HDC, nint HInstance)? Win32 { get; }
         public (nint Display, nint Window)? Vivante { get; }
         public nint? Glfw { get; }

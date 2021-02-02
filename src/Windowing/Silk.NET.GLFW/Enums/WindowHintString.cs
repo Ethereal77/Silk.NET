@@ -10,9 +10,5 @@ namespace Silk.NET.GLFW
     /// </summary>
     public enum WindowHintString
     {
-        /// <summary>
-        /// Sets the frame name on Cocoa. On any other platform, this does nothing.
-        /// </summary>
-        CocoaFrameName = 0x00023002
     }
 }

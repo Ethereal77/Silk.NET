@@ -298,14 +298,10 @@ namespace Silk.NET.OpenGLES
         Depth24Stencil8Oes = 0x88F0,
         [NativeName("Name", "GL_R11F_G11F_B10F")]
         R11fG11fB10f = 0x8C3A,
-        [NativeName("Name", "GL_R11F_G11F_B10F_APPLE")]
-        R11fG11fB10fApple = 0x8C3A,
         [NativeName("Name", "GL_R11F_G11F_B10F_EXT")]
         R11fG11fB10fExt = 0x8C3A,
         [NativeName("Name", "GL_RGB9_E5")]
         Rgb9E5 = 0x8C3D,
-        [NativeName("Name", "GL_RGB9_E5_APPLE")]
-        Rgb9E5Apple = 0x8C3D,
         [NativeName("Name", "GL_RGB9_E5_EXT")]
         Rgb9E5Ext = 0x8C3D,
         [NativeName("Name", "GL_SRGB")]

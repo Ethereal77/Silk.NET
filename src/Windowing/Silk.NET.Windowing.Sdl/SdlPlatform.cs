@@ -71,7 +71,6 @@ namespace Silk.NET.Windowing.Sdl
         public bool IsViewOnly => IsApplicable && SdlProvider.UninitializedSDL.Value.GetPlatformS() switch
         {
             "Windows" => false,
-            "Mac OS X" => false,
             _ => true
         };
 

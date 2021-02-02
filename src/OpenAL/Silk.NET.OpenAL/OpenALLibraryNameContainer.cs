@@ -13,9 +13,6 @@ namespace Silk.NET.OpenAL
     internal class OpenALLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string MacOS => "/System/Library/Frameworks/OpenAL.framework/OpenAL";
-
-        /// <inheritdoc />
         public override string Windows86 => "openal32.dll";
 
         /// <inheritdoc />

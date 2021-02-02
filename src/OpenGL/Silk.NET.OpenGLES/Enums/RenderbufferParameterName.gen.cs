@@ -20,8 +20,6 @@ namespace Silk.NET.OpenGLES
         RenderbufferSamples = 0x8CAB,
         [NativeName("Name", "GL_RENDERBUFFER_SAMPLES_ANGLE")]
         RenderbufferSamplesAngle = 0x8CAB,
-        [NativeName("Name", "GL_RENDERBUFFER_SAMPLES_APPLE")]
-        RenderbufferSamplesApple = 0x8CAB,
         [NativeName("Name", "GL_RENDERBUFFER_SAMPLES_EXT")]
         RenderbufferSamplesExt = 0x8CAB,
         [NativeName("Name", "GL_RENDERBUFFER_SAMPLES_NV")]

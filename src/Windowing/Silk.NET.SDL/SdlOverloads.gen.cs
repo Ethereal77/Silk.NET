@@ -9712,22 +9712,6 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 71, Column 39 in build/submodules/SDL-mirror/include\\SDL_metal.h")]
-        public static unsafe void* MetalCreateView(this Sdl thisApi, Span<Window> window)
-        {
-            // SpanOverloader
-            return thisApi.MetalCreateView(ref window.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 81, Column 30 in build/submodules/SDL-mirror/include\\SDL_metal.h")]
-        public static unsafe void MetalDestroyView<T0>(this Sdl thisApi, Span<T0> view) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MetalDestroyView(ref view.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 65, Column 40 in build/submodules/SDL-mirror/include\\SDL_power.h")]
         public static unsafe PowerState GetPowerInfo(this Sdl thisApi, int* secs, Span<int> pct)
         {
@@ -14357,22 +14341,6 @@ namespace Silk.NET.SDL
         {
             // SpanOverloader
             return thisApi.GLUnbindTexture(ref texture.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1137, Column 31 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe void* RenderGetMetalLayer(this Sdl thisApi, Span<Renderer> renderer)
-        {
-            // SpanOverloader
-            return thisApi.RenderGetMetalLayer(ref renderer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1148, Column 31 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe void* RenderGetMetalCommandEncoder(this Sdl thisApi, Span<Renderer> renderer)
-        {
-            // SpanOverloader
-            return thisApi.RenderGetMetalCommandEncoder(ref renderer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

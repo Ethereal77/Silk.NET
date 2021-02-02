@@ -313,12 +313,6 @@ namespace Silk.NET.Core.Loader
                 return new Win32LibraryLoader();
             }
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ||
-                RuntimeInformation.OSDescription.ToUpper().Contains("BSD"))
-            {
-                return new BsdLibraryLoader();
-            }
-
             PlatformNotSupported();
             return default;
 #endif
@@ -361,24 +355,6 @@ namespace Silk.NET.Core.Loader
             }
         }
 #endif
-
-        private class BsdLibraryLoader : LibraryLoader
-        {
-            protected override void CoreFreeNativeLibrary(nint handle)
-            {
-                Libc.dlclose(handle);
-            }
-
-            protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
-            {
-                return Libc.dlsym(handle, functionName);
-            }
-
-            protected override nint CoreLoadNativeLibrary(string name)
-            {
-                return Libc.dlopen(name, Libc.RtldNow);
-            }
-        }
 
         private class Win32LibraryLoader : LibraryLoader
         {

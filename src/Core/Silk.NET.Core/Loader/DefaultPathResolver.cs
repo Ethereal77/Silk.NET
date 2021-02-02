@@ -140,16 +140,6 @@ namespace Silk.NET.Core.Loader
 
         private string GuessFallbackRid(string actualRuntimeIdentifier)
         {
-            if (actualRuntimeIdentifier == "osx.10.13-x64")
-            {
-                return "osx.10.12-x64";
-            }
-
-            if (actualRuntimeIdentifier.StartsWith("osx"))
-            {
-                return "osx-x64";
-            }
-
             return null;
         }
 

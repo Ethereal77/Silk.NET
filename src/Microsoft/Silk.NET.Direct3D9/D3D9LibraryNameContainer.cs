@@ -13,9 +13,6 @@ namespace Silk.NET.Direct3D9
     internal class D3D9LibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string MacOS => "libd3d9.dylib";
-
-        /// <inheritdoc />
         public override string Windows64 => "d3d9.dll";
 
         /// <inheritdoc />

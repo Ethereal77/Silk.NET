@@ -14,8 +14,6 @@ namespace Silk.NET.SDL
         Unknown,
         Windows,
         DirectFB,
-        Cocoa,
-        UIKit,
         Mir, /* no longer available, left for API/ABI compatibility. Remove in 2.1! */
         WinRT,
         Vivante,
@@ -53,8 +51,6 @@ namespace Silk.NET.SDL
     public struct SysWMMsgValue
     {
         [FieldOffset(0)] public SysWMMsgWindows Win;
-        [FieldOffset(0)] public SysWMMsgDummy Cocoa;
-        [FieldOffset(0)] public SysWMMsgDummy UIKit;
         [FieldOffset(0)] public SysWMMsgDummy Vivante;
         [FieldOffset(0)] public int Dummy;
     }
@@ -77,8 +73,6 @@ namespace Silk.NET.SDL
     {
         [FieldOffset(0)] public SysWMInfoWindows Win;
         [FieldOffset(0)] public SysWMInfoWinRT WinRT;
-        [FieldOffset(0)] public SysWMInfoCocoa Cocoa;
-        [FieldOffset(0)] public SysWMInfoUIKit UIKit;
         [FieldOffset(0)] public SysWMInfoMir Mir;
         [FieldOffset(0)] public SysWMInfoVivante Vivante;
 
@@ -87,30 +81,10 @@ namespace Silk.NET.SDL
         [FieldOffset(0)] public unsafe fixed byte Dummy[64];
     }
 
-    public struct SysWMInfoCocoa
-    {
-        public unsafe void* Window; /**< The Cocoa window */
-    }
-
     public struct SysWMInfoWinRT
     {
         // TODO consider making this an IUnknown when DirectX is in?
         public unsafe void* Window; /**< The WinRT CoreWindow */
-    }
-
-    public struct SysWMInfoUIKit
-    {
-        public unsafe void* Window;
-
-        /**< The UIKit window */
-        public uint Framebuffer;
-
-        /**< The GL view's Framebuffer Object. It must be bound when rendering to the screen using GL. */
-        public uint Colorbuffer;
-
-        /**< The GL view's color Renderbuffer Object. It must be bound when SDL_GL_SwapWindow is called. */
-        public uint
-            ResolveFramebuffer; /**< The Framebuffer Object which holds the resolve color Renderbuffer, when MSAA is used. */
     }
 
     public struct SysWMInfoMir

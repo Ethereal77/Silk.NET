@@ -216,8 +216,7 @@ namespace Silk.NET.BuildTools
                     Controls = new[]
                     {
                         "control-variables-to-define-how-gernation-runs",
-                        "convert-windows-only",
-                        "convert-macos-only"
+                        "convert-windows-only"
                     },
                     ConverterOpts = new ConverterOptions
                     {
@@ -233,7 +232,6 @@ namespace Silk.NET.BuildTools
                     NameContainer = new NameContainer
                     {
                         ClassName = "MyNameContainer",
-                        MacOS = "libapi.dylib",
                         Windows64 = "api.dll",
                         Windows86 = "api.dll"
                     },

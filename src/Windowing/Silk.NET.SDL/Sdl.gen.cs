@@ -7229,16 +7229,6 @@ namespace Silk.NET.SDL
         public partial int WinRTRunApp<T0>(PfnMainFunc mainFunction, ref T0 reserved) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
-        public unsafe partial int UIKitRunApp(int argc, byte** argv, PfnMainFunc mainFunction);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
-        public unsafe partial int UIKitRunApp(int argc, ref byte* argv, PfnMainFunc mainFunction);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 25 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "__debugbreak")]
@@ -10735,26 +10725,6 @@ namespace Silk.NET.SDL
         public partial int ShowSimpleMessageBox(uint flags, string title, string message, ref Window window);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 71, Column 39 in build/submodules/SDL-mirror/include\\SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_CreateView")]
-        public unsafe partial void* MetalCreateView(Window* window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 71, Column 39 in build/submodules/SDL-mirror/include\\SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_CreateView")]
-        public unsafe partial void* MetalCreateView(ref Window window);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 81, Column 30 in build/submodules/SDL-mirror/include\\SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_DestroyView")]
-        public unsafe partial void MetalDestroyView(void* view);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 81, Column 30 in build/submodules/SDL-mirror/include\\SDL_metal.h")]
-        [NativeApi(EntryPoint = "SDL_Metal_DestroyView")]
-        public partial void MetalDestroyView<T0>(ref T0 view) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 65, Column 40 in build/submodules/SDL-mirror/include\\SDL_power.h")]
         [NativeApi(EntryPoint = "SDL_GetPowerInfo")]
         public unsafe partial PowerState GetPowerInfo(int* secs, int* pct);
@@ -14180,26 +14150,6 @@ namespace Silk.NET.SDL
         public partial int GLUnbindTexture(ref Texture texture);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1137, Column 31 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetMetalLayer")]
-        public unsafe partial void* RenderGetMetalLayer(Renderer* renderer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1137, Column 31 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetMetalLayer")]
-        public unsafe partial void* RenderGetMetalLayer(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1148, Column 31 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetMetalCommandEncoder")]
-        public unsafe partial void* RenderGetMetalCommandEncoder(Renderer* renderer);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1148, Column 31 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        [NativeApi(EntryPoint = "SDL_RenderGetMetalCommandEncoder")]
-        public unsafe partial void* RenderGetMetalCommandEncoder(ref Renderer renderer);
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 29 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_NumSensors")]
         public partial int NumSensors();
@@ -15408,18 +15358,6 @@ namespace Silk.NET.SDL
             var ret = VulkanGetInstanceExtensions(ref window, ref pCount, pNames);
             SilkMarshal.CopyPtrToStringArray((nint) pNames, pNamesSa);
             SilkMarshal.Free((nint) pNames);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        public unsafe int UIKitRunApp(int argc, string[] argvSa, PfnMainFunc mainFunction)
-        {
-            // StringArrayOverloader
-            var argv = (byte**) SilkMarshal.StringArrayToPtr(argvSa);
-            var ret = UIKitRunApp(argc, argv, mainFunction);
-            SilkMarshal.CopyPtrToStringArray((nint) argv, argvSa);
-            SilkMarshal.Free((nint) argv);
             return ret;
         }
 

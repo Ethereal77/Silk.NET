@@ -23,9 +23,7 @@ namespace Silk.NET.Core.Loader
             ? Environment.Is64BitProcess
                 ? UnderlyingPlatform.Windows64
                 : UnderlyingPlatform.Windows86
-            : RuntimeInformation.IsOSPlatform(OSPlatform.OSX)
-                ? UnderlyingPlatform.MacOS
-                : UnderlyingPlatform.Unknown;
+            : UnderlyingPlatform.Unknown;
 
         /// <summary>
         /// Gets the library name to use on Windows 64-bit.
@@ -38,11 +36,6 @@ namespace Silk.NET.Core.Loader
         public abstract string Windows86 { get; }
 
         /// <summary>
-        /// Gets the library name to use on MacOS.
-        /// </summary>
-        public abstract string MacOS { get; }
-
-        /// <summary>
         /// Gets the library name to use on the current platform.
         /// </summary>
         /// <returns>The library name.</returns>
@@ -51,7 +44,6 @@ namespace Silk.NET.Core.Loader
             UnderlyingPlatform.Unknown => ThrowInvalidPlatform(),
             UnderlyingPlatform.Windows64 => Windows64,
             UnderlyingPlatform.Windows86 => Windows86,
-            UnderlyingPlatform.MacOS => MacOS,
             _ => ThrowInvalidPlatform()
         };
         

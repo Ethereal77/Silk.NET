@@ -292,13 +292,6 @@ namespace Silk.NET.BuildTools
                 return false;
             }
                 
-            if (controls.Any
-                (y => y.ToLower() == "convert-macos-only") && !RuntimeInformation.IsOSPlatform
-                (OSPlatform.OSX))
-            {
-                return false;
-            }
-                
             return controls.All(y => y.ToLower() != "no-convert");
         }
 

@@ -13,9 +13,6 @@ namespace Silk.NET.Vulkan
     internal class VulkanLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string MacOS => "libMoltenVK.dylib";
-
-        /// <inheritdoc />
         public override string Windows64 => "vulkan-1.dll";
 
         /// <inheritdoc />

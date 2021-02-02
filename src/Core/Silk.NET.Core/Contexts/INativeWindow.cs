@@ -16,21 +16,10 @@ namespace Silk.NET.Core.Contexts
         public NativeWindowFlags Kind { get; }
 
         /// <summary>
-        /// The Cocoa window (NSWindow*). May be null, in which case the underlying window is not using Cocoa.
-        /// </summary>
-        nint? Cocoa { get; }
-
-        /// <summary>
         /// The WinRT window's inspectable interface (IInspectable*). May be null, in which case the underlying window
         /// is not using WinRT.
         /// </summary>
         nint? WinRT { get; }
-
-        /// <summary>
-        /// The UIKit window pointer (UIWindow*), OpenGL framebuffer object, OpenGL renderbuffer object, and resolve
-        /// color renderbuffer. May be null, in which case the underlying window is not using UIKit.
-        /// </summary>
-        (nint Window, uint Framebuffer, uint Colorbuffer, uint ResolveFramebuffer)? UIKit { get; }
 
         /// <summary>
         /// The Win32 window handle (HWND), display controller (HDC), and instance (HINSTANCE). May be null, in which

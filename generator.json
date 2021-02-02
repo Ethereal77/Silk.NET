@@ -155,7 +155,6 @@
             "nameContainer": {
                 "win-x64": "opencl.dll",
                 "win-x86": "opencl.dll",
-                "osx-x64": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
                 "className": "OpenCLLibraryNameContainer"
             },
             "typeMaps": [
@@ -337,7 +336,6 @@
             "nameContainer": {
                 "win-x64": "vulkan-1.dll",
                 "win-x86": "vulkan-1.dll",
-                "osx-x64": "libMoltenVK.dylib",
                 "className": "VulkanLibraryNameContainer"
             },
             "typeMaps": [
@@ -370,10 +368,7 @@
             "cacheDir": "build/cache",
             "cacheKey": "assimp",
             "controlDescriptors": [
-                "convert-windows-only",
-                "BUG: The descriptor below is because MSVC is currently invalid.",
-                "     The combination of convert-windows-only and convert-macos-only means that it will never convert",
-                "     Remove this once 16.9 Preview 2 has released."
+                "convert-windows-only"
             ],
             "converter": {},
             "prefix": "ai",
@@ -455,7 +450,6 @@
             "nameContainer": {
                 "win-x64": "Assimp64.dll",
                 "win-x86": "Assimp32.dll",
-                "osx-x64": "libassimp.5.dylib",
                 "className": "AssimpLibraryNameContainer"
             },
             "typeMaps": [
@@ -516,7 +510,6 @@
             "nameContainer": {
                 "win-x64": "openxr_loader.dll",
                 "win-x86": "openxr_loader.dll",
-                "osx-x64": "null",
                 "className": "OpenXRLibraryNameContainer"
             },
             "typeMaps": [
@@ -653,7 +646,6 @@
             "nameContainer": {
                 "win-x64": "SDL2.dll",
                 "win-x86": "SDL2.dll",
-                "osx-x64": "libSDL2-2.0.dylib",
                 "className": "SDLLibraryNameContainer"
             },
             "typeMaps": [
@@ -815,7 +807,6 @@
             "nameContainer": {
                 "win-x64": "DXGI.dll",
                 "win-x86": "DXGI.dll",
-                "osx-x64": "libDXGI.dylib",
                 "className": "DXGILibraryNameContainer"
             },
             "typeMaps": [
@@ -903,7 +894,6 @@
             "nameContainer": {
                 "win-x64": "d3d11.dll",
                 "win-x86": "d3d11.dll",
-                "osx-x64": "libd3d11.dylib",
                 "className": "D3D11LibraryNameContainer"
             },
             "typeMaps": [
@@ -983,7 +973,6 @@
             "nameContainer": {
                 "win-x64": "D3D12.dll",
                 "win-x86": "D3D12.dll",
-                "osx-x64": "libD3D12.dylib",
                 "className": "D3D12LibraryNameContainer"
             },
             "typeMaps": [
@@ -1058,7 +1047,6 @@
             "nameContainer": {
                 "win-x64": "d3d9.dll",
                 "win-x86": "d3d9.dll",
-                "osx-x64": "libd3d9.dylib",
                 "className": "D3D9LibraryNameContainer"
             },
             "typeMaps": [
@@ -1129,7 +1117,6 @@
             "nameContainer": {
                 "win-x64": "dxcompiler.dll",
                 "win-x86": "dxcompiler.dll",
-                "osx-x64": "libdxcompiler.dylib",
                 "className": "DXCLibraryNameContainer"
             },
             "typeMaps": [
@@ -1197,7 +1184,6 @@
             "nameContainer": {
                 "win-x64": "D3DCompiler_47.dll",
                 "win-x86": "D3DCompiler_47.dll",
-                "osx-x64": "libD3DCompiler_47.dylib",
                 "className": "D3DCompilerLibraryNameContainer"
             },
             "typeMaps": [
@@ -1429,7 +1415,6 @@
             "nameContainer": {
                 "win-x64": "d2d1.dll",
                 "win-x86": "d2d1.dll",
-                "osx-x64": "libd2d1.dylib",
                 "className": "D2D1LibraryNameContainer"
             },
             "typeMaps": [
