@@ -25,7 +25,7 @@
 
             This should be treated as an "emergency patch" and you should update as soon as reasonably practicable. Some of the bugs in 2.0 are fatal in some workloads.
         </PackageReleaseNotes>
-        <PackageTags>Vulkan;Assimp;DirectX;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;Bindings;Wrapper;Native</PackageTags>
+        <PackageTags>Assimp;DirectX;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;Bindings;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/Ultz/Silk.NET</RepositoryUrl>
@@ -33,7 +33,7 @@
         <VersionPrefix>2.1.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description>
-            Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as Vulkan, Assimp, and DirectX.
+            Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as Assimp or DirectX.
         </Description>
     </PropertyGroup>
     <!-- SourceLink -->

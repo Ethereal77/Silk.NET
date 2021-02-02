@@ -1,5 +1,5 @@
-﻿// This file is part of Silk.NET.
-// 
+// This file is part of Silk.NET.
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -48,7 +48,7 @@ void main()
 
         static void Main(string[] args)
         {
-            const GraphicsBackend preferredBackend = GraphicsBackend.Vulkan;
+            const GraphicsBackend preferredBackend = GraphicsBackend.Direct3D11;
             var opts = WindowOptions.Default;
             opts.Position = new(100, 100);
             opts.Size = new(960, 540);

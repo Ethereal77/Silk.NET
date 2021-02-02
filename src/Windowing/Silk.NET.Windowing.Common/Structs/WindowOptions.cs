@@ -3,21 +3,20 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
-using System.IO;
 using System.Reflection;
+
 using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
     /// <summary>
-    /// Contains all window properties, used for window creation.
+    ///   Contains all window properties, used for window creation.
     /// </summary>
     public struct WindowOptions : IWindowProperties
     {
         /// <summary>
-        /// Creates an instance of WindowOptions from an existing ViewOptions struct.
+        ///   Creates a new <see cref="WindowOptions"/> from an existing <see cref="ViewOptions"/>.
         /// </summary>
         /// <param name="opts">The view options to copy where applicable.</param>
         public WindowOptions(ViewOptions opts)
@@ -97,7 +96,7 @@ namespace Silk.NET.Windowing
         public IGLContext? SharedContext { get; }
 
         /// <summary>
-        /// Creates a new WindowOptions struct.
+        ///   Creates a new <see cref="WindowOptions"/> struct.
         /// </summary>
         public WindowOptions
         (
@@ -151,31 +150,19 @@ namespace Silk.NET.Windowing
                 if (asmName is not null)
                     name = asmName;
             }
-            catch { /* cannot use reflection */ }
-            
+            catch { /* Cannot use reflection */ }
+
             Default = new WindowOptions
             (
                 true, new Vector2D<int>(50, 50), new Vector2D<int>(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
-                name, WindowState.Normal,
-                WindowBorder.Resizable, true, true, VideoMode.Default
-            );
-
-            DefaultVulkan = new WindowOptions
-            (
-                true, new Vector2D<int>(50, 50), new Vector2D<int>(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
                 name, WindowState.Normal,
                 WindowBorder.Resizable, false, false, VideoMode.Default
             );
         }
 
         /// <summary>
-        /// Convenience wrapper around creating a new WindowProperties with sensible defaults.
+        ///   Gets a <see cref="WindowOptions"/> with sensible defaults.
         /// </summary>
         public static WindowOptions Default { get; }
-
-        /// <summary>
-        /// Convenience wrapper around creating a new WindowProperties with sensible values, intended for use with Vulkan.
-        /// </summary>
-        public static WindowOptions DefaultVulkan { get; }
     }
 }

@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -63,7 +63,6 @@ namespace Silk.NET.Windowing.Internals
 
         // Other APIs implemented abstractly
         public abstract IGLContext? GLContext { get; }
-        public abstract IVkSurface? VkSurface { get; }
         public abstract bool IsClosing { get; }
         public abstract VideoMode VideoMode { get; }
         public abstract bool IsEventDriven { get; set; }

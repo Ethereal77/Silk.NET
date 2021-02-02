@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -9,7 +9,7 @@ using Silk.NET.Maths;
 namespace Silk.NET.Windowing
 {
     /// <summary>
-    /// Contains all view properties, used for view creation.
+    ///   Contains all view properties, used for view creation.
     /// </summary>
     public struct ViewOptions : IViewProperties
     {
@@ -43,12 +43,12 @@ namespace Silk.NET.Windowing
 
         /// <inheritdoc />
         public int? PreferredStencilBufferBits { get; }
-        
+
         /// <inheritdoc />
         public Vector4D<int>? PreferredBitDepth { get; }
 
         /// <summary>
-        /// Creates a new WindowOptions struct.
+        ///   Creates a new <see cref="ViewOptions"/> struct.
         /// </summary>
         public ViewOptions
         (
@@ -77,9 +77,9 @@ namespace Silk.NET.Windowing
         }
 
         /// <summary>
-        /// Creates a ViewOptions struct from the given WindowOptions.
+        ///   Creates a new <see cref="ViewOptions"/> struct from the given <see cref="WindowOptions"/>.
         /// </summary>
-        /// <param name="opts">The window options to trim down.</param>
+        /// <param name="opts">The window options to copy.</param>
         public ViewOptions(WindowOptions opts)
         {
             FramesPerSecond = opts.FramesPerSecond;
@@ -95,19 +95,16 @@ namespace Silk.NET.Windowing
         }
 
         /// <summary>
-        /// Convenience wrapper around creating a new WindowProperties with sensible defaults.
+        ///   Represents a <see cref="ViewOptions"/> with sensible defaults.
         /// </summary>
         public static ViewOptions Default { get; } = new ViewOptions
         (
-            0.0, 0.0, GraphicsAPI.Default, true, true, VideoMode.Default
-        );
-
-        /// <summary>
-        /// Convenience wrapper around creating a new WindowProperties with sensible values, intended for use with Vulkan.
-        /// </summary>
-        public static ViewOptions DefaultVulkan { get; } = new ViewOptions
-        (
-            0.0, 0.0, GraphicsAPI.DefaultVulkan, false, false, VideoMode.Default
+            framesPerSecond: 0.0,
+            updatesPerSecond: 0.0,
+            GraphicsAPI.Default,
+            isVSync: false,
+            shouldSwapAutomatically: false,
+            videoMode: VideoMode.Default
         );
     }
 }

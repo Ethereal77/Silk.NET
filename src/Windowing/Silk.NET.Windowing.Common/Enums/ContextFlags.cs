@@ -8,25 +8,19 @@ using System;
 namespace Silk.NET.Windowing
 {
     /// <summary>
-    /// Represents flags related to the Vulkan context.
+    ///   Defines flags related to the creation of a graphics context.
     /// </summary>
     [Flags]
     public enum ContextFlags
     {
         /// <summary>
-        /// No flags enabled.
+        ///   No flags specified.
         /// </summary>
         Default = 0,
 
         /// <summary>
-        /// Enables debug context; debug contexts provide more debugging info, but can run slower.
+        ///   Enables debug context, providing more debugging information, although it can run slower.
         /// </summary>
-        Debug = 1,
-
-        /// <summary>
-        /// Enables forward compatability; this context won't support anything marked as deprecated in the current
-        /// version.
-        /// </summary>
-        ForwardCompatible = 2
+        Debug = 1
     }
 }

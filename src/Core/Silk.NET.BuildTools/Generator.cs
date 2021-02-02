@@ -15,14 +15,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
-using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.Converters;
-using Silk.NET.BuildTools.Converters.Constructors;
-using Silk.NET.BuildTools.Converters.Readers;
 using Silk.NET.BuildTools.Cpp;
 
 namespace Silk.NET.BuildTools
@@ -165,43 +161,8 @@ namespace Silk.NET.BuildTools
                 Console.WriteLine("Profile conversion started!");
                 var tsb4 = sw?.Elapsed.TotalSeconds;
                 var profiles = new List<Profile>();
-                if (task.Mode == ConverterMode.ConvertConstruct)
-                {
-                    foreach (var src in task.Sources)
-                    {
-                        var rawProfiles = ProfileConverter.ReadProfiles
-                        (
-                            task.ConverterOpts.Reader.ToLower() switch
-                            {
-                                "vk" => new VulkanReader(),
-                                _ => throw new ArgumentException("Couldn't find a reader with that name")
-                            }, task.ConverterOpts.Constructor.ToLower() switch
-                            {
-                                "vk" => new VulkanConstructor(),
-                                _ => throw new ArgumentException("Couldn't find a reader with that name")
-                            },
-                            OpenPath(src),
-                            task
-                        ).ToList();
 
-                        Console.WriteLine("Raw profile parsing complete, cloning in memory prior to baking...");
-                        profiles.AddRange
-                        (
-                            // BUG this is an awful fix for a weird bug, but if we don't do this everything falls apart.
-                            // feel free to remove the serialize-deserialize and try for yourself would welcome a fix ;)
-                            JsonConvert.DeserializeObject<Profile[]>
-                            (
-                                JsonConvert.SerializeObject
-                                (
-                                    rawProfiles
-                                )
-                            )
-                        );
-
-                        Console.WriteLine("Profiles are ready.");
-                    }
-                }
-                else if (task.Mode == ConverterMode.Clang)
+                if (task.Mode == ConverterMode.Clang)
                 {
                     foreach (var src in task.Sources)
                     {

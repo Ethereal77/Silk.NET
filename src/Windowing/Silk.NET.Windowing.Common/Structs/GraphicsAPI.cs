@@ -6,55 +6,53 @@
 namespace Silk.NET.Windowing
 {
     /// <summary>
-    /// Represents the context API, and associated configuration, that the window should use.
+    ///   Represents the context API, and associated configuration, that the window should use.
     /// </summary>
     /// <remarks>
-    /// <para>
-    /// By default, this struct uses Vulkan 1.1.
-    /// </para>
+    ///   By default, this struct uses DirectX 12.
     /// </remarks>
     public struct GraphicsAPI
     {
         /// <summary>
-        /// The rendering API to use.
+        ///   Gets or sets the rendering API to use.
         /// </summary>
         public ContextAPI API { get; set; }
 
         /// <summary>
-        /// Context creation flags.
+        ///   Gets or sets the options to use for creation of the graphics context.
         /// </summary>
         public ContextFlags Flags { get; set; }
 
         /// <summary>
-        /// The version of the API to use.
+        ///   Gets or sets the version of the API to use.
         /// </summary>
         public APIVersion Version { get; set; }
 
         /// <summary>
-        /// Create a new instance of the GraphicsAPI struct.
+        ///   Create a new instance of the <see cref="GraphicsAPI"/> struct.
         /// </summary>
         /// <param name="api">The context API to use.</param>
-        /// <param name="profile">The context profile to use.</param>
         /// <param name="flags">The context flags to use.</param>
         /// <param name="apiVersion">The API version to use.</param>
-        public GraphicsAPI(ContextAPI api, ContextFlags flags, APIVersion apiVersion)
+        public GraphicsAPI(ContextAPI api, APIVersion apiVersion, ContextFlags flags)
         {
             API = api;
-            Flags = flags;
             Version = apiVersion;
+            Flags = flags;
         }
 
         /// <summary>
-        /// The default graphics API. This is Vulkan 1.1.
+        ///   Gets the default graphics API. This is DirectX 12.
         /// </summary>
         public static GraphicsAPI Default => new GraphicsAPI
         (
-            ContextAPI.Vulkan,
-            ContextFlags.ForwardCompatible, new APIVersion(1, 1)
+            ContextAPI.DirectX,
+            new APIVersion(12, 0),
+            ContextFlags.Default
         );
 
         /// <summary>
-        /// No graphics API.
+        ///   Gets a <see cref="GraphicsAPI"/> representing no specific graphics API.
         /// </summary>
         public static GraphicsAPI None => default;
     }

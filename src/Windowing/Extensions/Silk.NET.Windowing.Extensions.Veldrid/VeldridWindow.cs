@@ -10,8 +10,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Contexts;
 using Veldrid;
-using Veldrid.Vk;
-using Vulkan.Xlib;
 
 namespace Silk.NET.Windowing.Extensions.Veldrid
 {
@@ -83,8 +81,8 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 new GraphicsAPI
                 (
                     ContextAPI.None,
-                    ContextFlags.ForwardCompatible,
-                    new APIVersion(1, 0)
+                    new APIVersion(1, 0),
+                    ContextFlags.Default
                 ),
                 windowCI.Title,
                 WindowState.Normal,
@@ -143,7 +141,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             preferredBackend switch
             {
                 GraphicsBackend.Direct3D11 => CreateDefaultD3D11GraphicsDevice(options, window),
-                GraphicsBackend.Vulkan => CreateVulkanGraphicsDevice(options, window),
                 _ => throw new VeldridException("Invalid GraphicsBackend: " + preferredBackend)
             };
 
@@ -168,61 +165,18 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             static void Throw() => throw new PlatformNotSupportedException();
         }
 
-        private static unsafe VkSurfaceSource GetSurfaceSource(INativeWindow window)
-        {
-            if (window.Win32.HasValue)
-            {
-                return VkSurfaceSource.CreateWin32(window.Win32.Value.HInstance, window.Win32.Value.Hwnd);
-            }
-
-            Throw();
-            return null!;
-
-            static void Throw() => throw new PlatformNotSupportedException();
-        }
-
-        public static unsafe GraphicsDevice CreateVulkanGraphicsDevice(GraphicsDeviceOptions options, IView window)
-            => CreateVulkanGraphicsDevice(options, window, false);
-
-        public static unsafe GraphicsDevice CreateVulkanGraphicsDevice
-        (
-            GraphicsDeviceOptions options,
-            IView window,
-            bool colorSrgb
-        )
-        {
-            var scDesc = new SwapchainDescription
-            (
-                GetSwapchainSource(window.Native),
-                (uint) window.Size.X,
-                (uint) window.Size.Y,
-                options.SwapchainDepthFormat,
-                options.SyncToVerticalBlank,
-                colorSrgb
-            );
-            var gd = GraphicsDevice.CreateVulkan(options, scDesc);
-
-            return gd;
-        }
-
         /// <summary>
         /// Gets the default backend given the current runtime information.
         /// </summary>
         /// <returns>The default backend for this runtime/platform.</returns>
         public static GraphicsBackend GetPlatformDefaultBackend()
         {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                return GraphicsBackend.Direct3D11;
-            }
-
-            return GraphicsBackend.Vulkan;
+            return GraphicsBackend.Direct3D11;
         }
 
         public static GraphicsAPI ToGraphicsAPI(this GraphicsBackend backend) => backend switch
         {
             GraphicsBackend.Direct3D11 => GraphicsAPI.None,
-            GraphicsBackend.Vulkan => GraphicsAPI.Default,
             _ => throw new ArgumentOutOfRangeException()
         };
 

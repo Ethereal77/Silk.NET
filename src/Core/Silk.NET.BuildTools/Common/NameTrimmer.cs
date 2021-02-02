@@ -37,24 +37,10 @@ namespace Silk.NET.BuildTools.Common
         public static IEnumerable<string> GetNameVariations
             (string functionEntrypoint, string prefix, bool trimExtensionName = true, bool trimDataType = true)
         {
-            var extensionTrimmer = new ExtensionNameTrimmer();
-            var dataTypeTrimmer = new DataTypeNameTrimmer();
-
             var variations = new List<string>();
             var currentVariation = functionEntrypoint;
 
             variations.Add(currentVariation);
-
-            if (extensionTrimmer.IsRelevant(currentVariation) && trimExtensionName)
-            {
-                currentVariation = extensionTrimmer.Trim(currentVariation, prefix).TrimEnd('_');
-                variations.Add(currentVariation);
-            }
-
-            if (dataTypeTrimmer.IsRelevant(currentVariation) && trimDataType)
-            {
-                variations.Add(dataTypeTrimmer.Trim(currentVariation, prefix));
-            }
 
             return variations.Distinct().OrderByDescending(v => v.Length);
         }
