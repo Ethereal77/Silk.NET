@@ -10,9 +10,6 @@ area-Input:
 area-Windowing:
 - any: ['src/Windowing/**/*']
 
-area-OpenCL:
-- any: ['src/OpenCL/**/*']
-
 area-Vulkan:
 - any: ['src/Vulkan/**/*']
 

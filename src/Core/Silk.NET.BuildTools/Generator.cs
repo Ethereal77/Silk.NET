@@ -1,5 +1,5 @@
 ﻿// This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -92,7 +92,7 @@ namespace Silk.NET.BuildTools
                 Program.ConsoleWriter.Instance.CurrentName.Value = task.Name;
                 sw = Stopwatch.StartNew();
             }
-            
+
             try
             {
                 RunTask(task, sw);
@@ -107,7 +107,7 @@ namespace Silk.NET.BuildTools
                     return;
                 }
             }
-            
+
             if (sw is not null)
             {
                 Program.ConsoleWriter.Instance.Timings.Value =
@@ -132,7 +132,7 @@ namespace Silk.NET.BuildTools
                     new KeyValuePair<string, (TimeSpan, bool)>(task.Name, (sw.Elapsed, true));
             }
         }
-        
+
         public static void RunTask(BindTask task) => RunTask(task, null);
         private static void RunTask(BindTask task, Stopwatch? sw)
         {
@@ -146,7 +146,7 @@ namespace Silk.NET.BuildTools
                         toAdd.Add(kvp);
                     }
                 }
-                
+
                 foreach (var kvp in toAdd)
                 {
                     var includedMap = JsonConvert.DeserializeObject<Dictionary<string, string>>
@@ -173,12 +173,10 @@ namespace Silk.NET.BuildTools
                         (
                             task.ConverterOpts.Reader.ToLower() switch
                             {
-                                "cl" => new OpenCLReader(),
                                 "vk" => new VulkanReader(),
                                 _ => throw new ArgumentException("Couldn't find a reader with that name")
                             }, task.ConverterOpts.Constructor.ToLower() switch
                             {
-                                "cl" => new OpenCLConstructor(),
                                 "vk" => new VulkanConstructor(),
                                 _ => throw new ArgumentException("Couldn't find a reader with that name")
                             },
@@ -199,7 +197,7 @@ namespace Silk.NET.BuildTools
                                 )
                             )
                         );
-                        
+
                         Console.WriteLine("Profiles are ready.");
                     }
                 }
@@ -213,7 +211,7 @@ namespace Silk.NET.BuildTools
 
                 profile = ProfileBakery.Bake
                     (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList());
-                
+
                 PreprocessorMixin.AddDirectives(profile, task.OutputOpts.ConditionalFunctions);
 
                 var tsaf = sw?.Elapsed.TotalSeconds - tsb4;
@@ -226,7 +224,7 @@ namespace Silk.NET.BuildTools
                     {
                         Directory.CreateDirectory(task.CacheFolder);
                     }
-                
+
                     using var fileStream = File.OpenWrite(Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz"));
                     using var gzStream = new GZipStream(fileStream, CompressionLevel.Optimal);
                     gzStream.Write(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(profile)));
@@ -289,7 +287,7 @@ namespace Silk.NET.BuildTools
             {
                 return false;
             }
-                
+
             return controls.All(y => y.ToLower() != "no-convert");
         }
 
