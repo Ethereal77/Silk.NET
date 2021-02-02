@@ -57,12 +57,6 @@ namespace Silk.NET.SDL
         public const string HintVideoMinimizeOnFocusLoss =
             "SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS";
 
-        public const string HintIdleTimerDisabled =
-            "SDL_IOS_IDLE_TIMER_DISABLED";
-
-        public const string HintOrientations =
-            "SDL_IOS_ORIENTATIONS";
-
         public const string HintXinputEnabled =
             "SDL_XINPUT_ENABLED";
 
@@ -158,9 +152,6 @@ namespace Silk.NET.SDL
         public const string HintWindowsDisableThreadNaming =
             "SDL_WINDOWS_DISABLE_THREAD_NAMING";
 
-        public const string HintAppleTvRemoteAllowRotation =
-            "SDL_APPLE_TV_REMOTE_ALLOW_ROTATION";
-
         /// <remarks>Only available in 2.0.6 or higher.</remarks>
         public const string HintAudioResamplingMode =
             "SDL_AUDIO_RESAMPLING_MODE";
@@ -182,10 +173,6 @@ namespace Silk.NET.SDL
 
         public const string HintWindowsIntresourceIconSmall =
             "SDL_WINDOWS_INTRESOURCE_ICON_SMALL";
-
-        /// <remarks>Only available in 2.0.8 or higher.</remarks>
-        public const string HintIOSHideHomeIndicator =
-            "SDL_IOS_HIDE_HOME_INDICATOR";
 
         public const string HintTvRemoteAsJoystick =
             "SDL_TV_REMOTE_AS_JOYSTICK";

@@ -64,7 +64,7 @@ class Build : NukeBuild
     bool HasProcessedSolutions { get; set; }
     bool HasProcessedProperties { get; set; }
 
-    [Parameter("The feature sets to build - Could include Core or iOS. Any projects that aren't " +
+    [Parameter("The feature sets to build - Could include Core. Any projects that aren't " +
                "categorized into a feature set will always be built.")]
     string[] FeatureSets = {"core"};
 

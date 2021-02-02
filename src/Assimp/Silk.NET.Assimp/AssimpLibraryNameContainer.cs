@@ -19,9 +19,6 @@ namespace Silk.NET.Assimp
         public override string MacOS => "libassimp.5.dylib";
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
-
-        /// <inheritdoc />
         public override string Windows64 => "Assimp64.dll";
 
         /// <inheritdoc />

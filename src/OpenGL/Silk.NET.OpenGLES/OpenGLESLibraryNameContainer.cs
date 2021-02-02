@@ -19,9 +19,6 @@ namespace Silk.NET.OpenGLES
         public override string MacOS => "/System/Library/Frameworks/OpenGLES.framework/OpenGLES";
 
         /// <inheritdoc />
-        public override string IOS => "/System/Library/Frameworks/OpenGLES.framework/OpenGLES";
-
-        /// <inheritdoc />
         public override string Windows64 => "libGLESv2.dll";
 
         /// <inheritdoc />

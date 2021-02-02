@@ -420,8 +420,6 @@ namespace Silk.NET.Vulkan
         DisplayPlaneInfo2Khr = 1000121003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DISPLAY_PLANE_CAPABILITIES_2_KHR")]
         DisplayPlaneCapabilities2Khr = 1000121004,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_IOS_SURFACE_CREATE_INFO_MVK")]
-        IosSurfaceCreateInfoMvk = 1000122000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MACOS_SURFACE_CREATE_INFO_MVK")]
         MacosSurfaceCreateInfoMvk = 1000123000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_DEDICATED_REQUIREMENTS_KHR")]

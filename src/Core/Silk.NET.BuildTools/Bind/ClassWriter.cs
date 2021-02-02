@@ -47,9 +47,6 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"        public override string MacOS => \"{task.Task.NameContainer.MacOS}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string IOS => \"{task.Task.NameContainer.IOS}\";");
-            sw.WriteLine();
-            sw.WriteLine("        /// <inheritdoc />");
             sw.WriteLine($"        public override string Windows64 => \"{task.Task.NameContainer.Windows64}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");

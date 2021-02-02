@@ -19,9 +19,6 @@ namespace Silk.NET.Direct3D12
         public override string MacOS => "libD3D12.dylib";
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
-
-        /// <inheritdoc />
         public override string Windows64 => "D3D12.dll";
 
         /// <inheritdoc />

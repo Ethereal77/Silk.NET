@@ -19,9 +19,6 @@ namespace Silk.NET.SDL
         public override string MacOS => "libSDL2-2.0.dylib";
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
-
-        /// <inheritdoc />
         public override string Windows64 => "SDL2.dll";
 
         /// <inheritdoc />

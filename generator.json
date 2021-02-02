@@ -157,7 +157,6 @@
                 "win-x64": "opencl.dll",
                 "win-x86": "opencl.dll",
                 "osx-x64": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
-                "iOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
                 "className": "OpenCLLibraryNameContainer"
             },
             "typeMaps": [
@@ -341,7 +340,6 @@
                 "win-x64": "vulkan-1.dll",
                 "win-x86": "vulkan-1.dll",
                 "osx-x64": "libMoltenVK.dylib",
-                "iOS": "__Internal",
                 "className": "VulkanLibraryNameContainer"
             },
             "typeMaps": [
@@ -461,7 +459,6 @@
                 "win-x64": "Assimp64.dll",
                 "win-x86": "Assimp32.dll",
                 "osx-x64": "libassimp.5.dylib",
-                "iOS": "__Internal",
                 "className": "AssimpLibraryNameContainer"
             },
             "typeMaps": [
@@ -524,7 +521,6 @@
                 "win-x64": "openxr_loader.dll",
                 "win-x86": "openxr_loader.dll",
                 "osx-x64": "null",
-                "iOS": "__Internal",
                 "className": "OpenXRLibraryNameContainer"
             },
             "typeMaps": [
@@ -664,7 +660,6 @@
                 "win-x64": "SDL2.dll",
                 "win-x86": "SDL2.dll",
                 "osx-x64": "libSDL2-2.0.dylib",
-                "iOS": "__Internal",
                 "className": "SDLLibraryNameContainer"
             },
             "typeMaps": [
@@ -828,7 +823,6 @@
                 "win-x64": "DXGI.dll",
                 "win-x86": "DXGI.dll",
                 "osx-x64": "libDXGI.dylib",
-                "iOS": "__Internal",
                 "className": "DXGILibraryNameContainer"
             },
             "typeMaps": [
@@ -918,7 +912,6 @@
                 "win-x64": "d3d11.dll",
                 "win-x86": "d3d11.dll",
                 "osx-x64": "libd3d11.dylib",
-                "iOS": "__Internal",
                 "className": "D3D11LibraryNameContainer"
             },
             "typeMaps": [
@@ -1000,7 +993,6 @@
                 "win-x64": "D3D12.dll",
                 "win-x86": "D3D12.dll",
                 "osx-x64": "libD3D12.dylib",
-                "iOS": "__Internal",
                 "className": "D3D12LibraryNameContainer"
             },
             "typeMaps": [
@@ -1077,7 +1069,6 @@
                 "win-x64": "d3d9.dll",
                 "win-x86": "d3d9.dll",
                 "osx-x64": "libd3d9.dylib",
-                "iOS": "__Internal",
                 "className": "D3D9LibraryNameContainer"
             },
             "typeMaps": [
@@ -1150,7 +1141,6 @@
                 "win-x64": "dxcompiler.dll",
                 "win-x86": "dxcompiler.dll",
                 "osx-x64": "libdxcompiler.dylib",
-                "iOS": "__Internal",
                 "className": "DXCLibraryNameContainer"
             },
             "typeMaps": [
@@ -1220,7 +1210,6 @@
                 "win-x64": "D3DCompiler_47.dll",
                 "win-x86": "D3DCompiler_47.dll",
                 "osx-x64": "libD3DCompiler_47.dylib",
-                "iOS": "__Internal",
                 "className": "D3DCompilerLibraryNameContainer"
             },
             "typeMaps": [
@@ -1454,7 +1443,6 @@
                 "win-x64": "d2d1.dll",
                 "win-x86": "d2d1.dll",
                 "osx-x64": "libd2d1.dylib",
-                "iOS": "__Internal",
                 "className": "D2D1LibraryNameContainer"
             },
             "typeMaps": [

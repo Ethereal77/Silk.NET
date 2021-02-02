@@ -10,7 +10,6 @@ namespace Silk.NET.Core.Loader
         Windows64,
         Windows86,
         Linux,
-        MacOS,
-        IOS
+        MacOS
     }
 }

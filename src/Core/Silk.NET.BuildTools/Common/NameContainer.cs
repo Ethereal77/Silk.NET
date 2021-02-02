@@ -37,12 +37,6 @@ namespace Silk.NET.BuildTools.Common
         public string MacOS { get; set; }
 
         /// <summary>
-        /// Gets or sets the iOS library name.
-        /// </summary>
-        [JsonProperty("iOS")]
-        public string IOS { get; set; }
-
-        /// <summary>
         /// Gets or sets the class name of the output name container.
         /// </summary>
         [JsonProperty("className")]

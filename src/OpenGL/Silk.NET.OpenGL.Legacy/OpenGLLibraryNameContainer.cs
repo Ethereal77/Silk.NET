@@ -19,9 +19,6 @@ namespace Silk.NET.OpenGL.Legacy
         public override string MacOS => "/System/Library/Frameworks/OpenGL.framework/OpenGL";
 
         /// <inheritdoc />
-        public override string IOS => "/System/Library/Frameworks/OpenGL.framework/OpenGL";
-
-        /// <inheritdoc />
         public override string Windows64 => "opengl32.dll";
 
         /// <inheritdoc />

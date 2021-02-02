@@ -19,9 +19,6 @@ namespace Silk.NET.Vulkan
         public override string MacOS => "libMoltenVK.dylib";
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
-
-        /// <inheritdoc />
         public override string Windows64 => "vulkan-1.dll";
 
         /// <inheritdoc />

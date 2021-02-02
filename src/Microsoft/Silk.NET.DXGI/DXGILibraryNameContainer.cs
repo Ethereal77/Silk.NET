@@ -19,9 +19,6 @@ namespace Silk.NET.DXGI
         public override string MacOS => "libDXGI.dylib";
 
         /// <inheritdoc />
-        public override string IOS => "__Internal"; // __Internal relies on a SilkTouch override.
-
-        /// <inheritdoc />
         public override string Windows64 => "DXGI.dll";
 
         /// <inheritdoc />

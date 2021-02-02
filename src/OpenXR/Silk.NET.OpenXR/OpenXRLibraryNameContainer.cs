@@ -19,9 +19,6 @@ namespace Silk.NET.OpenXR
         public override string MacOS => "null";
 
         /// <inheritdoc />
-        public override string IOS => "__Internal";
-
-        /// <inheritdoc />
         public override string Windows64 => "openxr_loader.dll";
 
         /// <inheritdoc />

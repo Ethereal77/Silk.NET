@@ -15,8 +15,6 @@ namespace Silk.NET.OpenGLES
     public enum SyncObjectMask : int
     {
         [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT")]
-        SyncFlushCommandsBit = 0x1,
-        [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
-        SyncFlushCommandsBitApple = 0x1,
+        SyncFlushCommandsBit = 0x1
     }
 }

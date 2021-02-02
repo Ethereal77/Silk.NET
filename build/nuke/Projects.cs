@@ -17,8 +17,7 @@ public static class Projects
     // Modify this bit if you want to define another feature set
     public static readonly IReadOnlyList<FeatureSet> FeatureSets = new[]
     {
-        new FeatureSet("iOS", true, "Silk.NET.Windowing.Sdl.iOS", "TriangleIOS"),
-        new FeatureSet("NUKE", false, "Silk.NET.NUKE", "Silk.NET.NUKE.SshAgent"), 
+        new FeatureSet("NUKE", false, "Silk.NET.NUKE", "Silk.NET.NUKE.SshAgent"),
     };
 
     public static void ProcessSolution(Solution originalSolution, string[] featureSets, bool hasDesktopMsBuild)
