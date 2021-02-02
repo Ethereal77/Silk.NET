@@ -13,12 +13,6 @@ namespace Silk.NET.BuildTools.Common
     public class NameContainer
     {
         /// <summary>
-        /// Gets or sets the Linux library name.
-        /// </summary>
-        [JsonProperty("linux-x64")] 
-        public string Linux { get; set; }
-
-        /// <summary>
         /// Gets or sets the Windows x64 library name.
         /// </summary>
         [JsonProperty("win-x64")]

@@ -172,16 +172,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 return SwapchainSource.CreateWin32(view.Win32.Value.Hwnd, view.Win32.Value.HInstance);
             }
 
-            if (view.X11.HasValue)
-            {
-                return SwapchainSource.CreateXlib(view.X11.Value.Display, (nint) view.X11.Value.Window);
-            }
-
-            if (view.Wayland.HasValue)
-            {
-                return SwapchainSource.CreateWayland(view.Wayland.Value.Display, view.Wayland.Value.Surface);
-            }
-
             if (view.Cocoa.HasValue)
             {
                 return SwapchainSource.CreateNSWindow(view.Cocoa.Value);
@@ -200,12 +190,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
 
         private static unsafe VkSurfaceSource GetSurfaceSource(INativeWindow window)
         {
-            if (window.X11.HasValue)
-            {
-                return VkSurfaceSource.CreateXlib
-                    ((Display*) window.X11.Value.Display, new() {Value = (nint) window.X11.Value.Window});
-            }
-
             if (window.Win32.HasValue)
             {
                 return VkSurfaceSource.CreateWin32(window.Win32.Value.HInstance, window.Win32.Value.Hwnd);

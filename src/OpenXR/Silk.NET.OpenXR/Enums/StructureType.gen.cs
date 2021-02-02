@@ -140,8 +140,6 @@ namespace Silk.NET.OpenXR
         TypeGraphicsBindingOpenglXlibKhr = 1000023001,
         [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_OPENGL_XCB_KHR")]
         TypeGraphicsBindingOpenglXcbKhr = 1000023002,
-        [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_OPENGL_WAYLAND_KHR")]
-        TypeGraphicsBindingOpenglWaylandKhr = 1000023003,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_OPENGL_KHR")]
         TypeSwapchainImageOpenglKhr = 1000023004,
         [NativeName("Name", "XR_TYPE_GRAPHICS_REQUIREMENTS_OPENGL_KHR")]

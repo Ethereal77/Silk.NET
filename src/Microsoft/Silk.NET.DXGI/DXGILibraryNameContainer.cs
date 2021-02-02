@@ -13,9 +13,6 @@ namespace Silk.NET.DXGI
     internal class DXGILibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libDXGI.so";
-
-        /// <inheritdoc />
         public override string MacOS => "libDXGI.dylib";
 
         /// <inheritdoc />

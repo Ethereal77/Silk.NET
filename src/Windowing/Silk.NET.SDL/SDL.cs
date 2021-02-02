@@ -42,15 +42,6 @@ namespace Silk.NET.SDL
         public const string HintRenderVsync =
             "SDL_RENDER_VSYNC";
 
-        public const string HintVideoX11Xvidmode =
-            "SDL_VIDEO_X11_XVIDMODE";
-
-        public const string HintVideoX11Xinerama =
-            "SDL_VIDEO_X11_XINERAMA";
-
-        public const string HintVideoX11Xrandr =
-            "SDL_VIDEO_X11_XRANDR";
-
         public const string HintGrabKeyboard =
             "SDL_GRAB_KEYBOARD";
 
@@ -139,9 +130,6 @@ namespace Silk.NET.SDL
         public const string HintMacBackgroundApp =
             "SDL_MAC_BACKGROUND_APP";
 
-        public const string HintVideoX11NetWmPing =
-            "SDL_VIDEO_X11_NET_WM_PING";
-
         /// <remarks>Only available in 2.0.5 or higher.</remarks>
         public const string HintMouseFocusClickthrough =
             "SDL_MOUSE_FOCUS_CLICKTHROUGH";
@@ -227,10 +215,6 @@ namespace Silk.NET.SDL
         public const string HintWaveFactChunk =
             "SDL_WAVE_FACT_CHUNK";
 
-        /// <remarks>Only available in 2.0.11 or higher.</remarks>
-        public const string HintVidoX11WindowVisualid =
-            "SDL_VIDEO_X11_WINDOW_VISUALID";
-
         public const string HintGamecontrollerUseButtonLabels =
             "SDL_GAMECONTROLLER_USE_BUTTON_LABELS";
 
@@ -242,9 +226,6 @@ namespace Silk.NET.SDL
 
         public const string HintDisplayUsableBounds =
             "SDL_DISPLAY_USABLE_BOUNDS";
-
-        public const string HintVideoX11ForceEGL =
-            "SDL_VIDEO_X11_FORCE_EGL";
 
         public const string HintGamecontrollertype =
             "SDL_GAMECONTROLLERTYPE";

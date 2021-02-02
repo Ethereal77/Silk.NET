@@ -13,9 +13,6 @@ namespace Silk.NET.OpenGLES
     internal class OpenGLESLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libGLESv2.so";
-
-        /// <inheritdoc />
         public override string MacOS => "/System/Library/Frameworks/OpenGLES.framework/OpenGLES";
 
         /// <inheritdoc />

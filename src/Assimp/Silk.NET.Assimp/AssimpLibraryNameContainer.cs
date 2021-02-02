@@ -13,9 +13,6 @@ namespace Silk.NET.Assimp
     internal class AssimpLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libassimp.so.5";
-
-        /// <inheritdoc />
         public override string MacOS => "libassimp.5.dylib";
 
         /// <inheritdoc />

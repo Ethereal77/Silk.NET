@@ -16,21 +16,9 @@ namespace Silk.NET.Core.Contexts
         public NativeWindowFlags Kind { get; }
 
         /// <summary>
-        /// The X11 display pointer (Display*) and the window XID (Window) of the underlying X11 window. May be null,
-        /// in which case the underlying window is not using X11.
-        /// </summary>
-        (nint Display, nuint Window)? X11 { get; }
-
-        /// <summary>
         /// The Cocoa window (NSWindow*). May be null, in which case the underlying window is not using Cocoa.
         /// </summary>
         nint? Cocoa { get; }
-
-        /// <summary>
-        /// The Wayland display pointer (wl_display*) and surface pointer (wl_surface*). May be null, in which case the
-        /// underlying window is not using Wayland.
-        /// </summary>
-        (nint Display, nint Surface)? Wayland { get; }
 
         /// <summary>
         /// The WinRT window's inspectable interface (IInspectable*). May be null, in which case the underlying window

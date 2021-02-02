@@ -1141,10 +1141,6 @@ namespace Silk.NET.GLFW
         /// <param name="ypos">The desired y-coordinate, relative to the top edge of the client area.</param>
         /// <remarks>
         /// <para>
-        /// Wayland: This function will only work when the cursor mode is <see cref="CursorModeValue.CursorDisabled" />,
-        ///          otherwise it will do nothing.
-        /// </para>
-        /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
@@ -1904,13 +1900,6 @@ namespace Silk.NET.GLFW
         ///       The GLFW test and example programs use a custom Info.plist template for this, which can be found as
         /// CMake/MacOSXBundleInfo.plist.in in the source tree.
         /// </para>
-        /// <para>
-        /// X11: Some window managers will not respect the placement of initially hidden windows.
-        /// X11: Due to the asynchronous nature of X11, it may take a moment for a window to reach its requested state.
-        ///      This means you may not be able to query the final size, position or other attributes directly after window
-        /// creation.
-        /// </para>
-        /// <para>
         /// This function must not be called from a callback.
         /// </para>
         /// <para>
@@ -3413,7 +3402,7 @@ namespace Silk.NET.GLFW
         /// if the window has been exposed after having been covered by another window.
         /// </para>
         /// <para>
-        /// On compositing window systems such as Aero, Compiz, Aqua or Wayland, where
+        /// On compositing window systems such as Aero, Compiz or Aqua, where
         /// the window contents are saved off-screen, this callback may be called only
         /// very infrequently or never at all.
         /// </para>

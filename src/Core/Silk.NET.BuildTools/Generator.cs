@@ -299,13 +299,6 @@ namespace Silk.NET.BuildTools
                 return false;
             }
                 
-            if (controls.Any
-                (y => y.ToLower() == "convert-linux-only") && !RuntimeInformation.IsOSPlatform
-                (OSPlatform.Linux))
-            {
-                return false;
-            }
-
             return controls.All(y => y.ToLower() != "no-convert");
         }
 

@@ -30,7 +30,7 @@ namespace Silk.NET.Core.Loader
         public override IEnumerable<string> EnumeratePossibleLibraryLoadTargets(string name)
             => CoreEnumeratePossibleLibraryLoadTargets(name);
 
-        private IEnumerable<string> CoreEnumeratePossibleLibraryLoadTargets(string name, bool noLinuxTraverse = false)
+        private IEnumerable<string> CoreEnumeratePossibleLibraryLoadTargets(string name)
         {
             yield return name;
             if (!string.IsNullOrEmpty(AppContext.BaseDirectory))
@@ -42,34 +42,6 @@ namespace Silk.NET.Core.Loader
             {
                 yield return appLocalNativePath;
                 yield return depsResolvedPath;
-            }
-
-            if (!noLinuxTraverse)
-            {
-                foreach (var linuxName in GetLinuxPossibilities(name))
-                {
-                    foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(linuxName, true))
-                    {
-                        yield return possibleLoadTarget;
-                    }
-                }
-            }
-        }
-
-        private static IEnumerable<string> GetLinuxPossibilities(string name)
-        {
-            var nameSplit = name.Split('.');
-            var indexOfSo = Array.LastIndexOf(nameSplit, "so");
-            if (indexOfSo != -1)
-            {
-                // for libglfw.so.3.3 this should return:
-                // libglfw.so
-                // libglfw.so.3
-                // libglfw.so.3.3
-                for (var i = indexOfSo; i < nameSplit.Length; i++)
-                {
-                    yield return string.Join(".", nameSplit, 0, i + 1);
-                }
             }
         }
 

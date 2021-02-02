@@ -41,9 +41,6 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"    internal class {task.Task.NameContainer.ClassName} : SearchPathContainer");
             sw.WriteLine("    {");
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Linux => \"{task.Task.NameContainer.Linux}\";");
-            sw.WriteLine();
-            sw.WriteLine("        /// <inheritdoc />");
             sw.WriteLine($"        public override string MacOS => \"{task.Task.NameContainer.MacOS}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");

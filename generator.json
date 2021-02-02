@@ -153,7 +153,6 @@
             "namespace": "Silk.NET.OpenCL",
             "extensionsNamespace": "Silk.NET.OpenCL.Extensions",
             "nameContainer": {
-                "linux-x64": "libOpenCL.so",
                 "win-x64": "opencl.dll",
                 "win-x86": "opencl.dll",
                 "osx-x64": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
@@ -336,7 +335,6 @@
             "namespace": "Silk.NET.Vulkan",
             "extensionsNamespace": "Silk.NET.Vulkan.Extensions",
             "nameContainer": {
-                "linux-x64": "libvulkan.so.1",
                 "win-x64": "vulkan-1.dll",
                 "win-x86": "vulkan-1.dll",
                 "osx-x64": "libMoltenVK.dylib",
@@ -455,7 +453,6 @@
             "namespace": "Silk.NET.Assimp",
             "extensionsNamespace": "Silk.NET.Assimp.Extensions",
             "nameContainer": {
-                "linux-x64": "libassimp.so.5",
                 "win-x64": "Assimp64.dll",
                 "win-x86": "Assimp32.dll",
                 "osx-x64": "libassimp.5.dylib",
@@ -517,7 +514,6 @@
             "namespace": "Silk.NET.OpenXR",
             "extensionsNamespace": "Silk.NET.OpenXR.Extensions",
             "nameContainer": {
-                "linux-x64": "libopenxr_loader.so.1",
                 "win-x64": "openxr_loader.dll",
                 "win-x86": "openxr_loader.dll",
                 "osx-x64": "null",
@@ -596,8 +592,7 @@
                     "-Ibuild/submodules/SDL-mirror/include",
                     "-D__IPHONEOS__",
                     "-D__WIN32__",
-                    "-D__WINRT__",
-                    "-D__LINUX__"
+                    "-D__WINRT__"
                 ],
                 "traverse": [
                     "!build/submodules/SDL-mirror/include/SDL_rwops.h",
@@ -656,7 +651,6 @@
             "namespace": "Silk.NET.SDL",
             "extensionsNamespace": "Silk.NET.SDL.Extensions",
             "nameContainer": {
-                "linux-x64": "libSDL2-2.0.so",
                 "win-x64": "SDL2.dll",
                 "win-x86": "SDL2.dll",
                 "osx-x64": "libSDL2-2.0.dylib",
@@ -819,7 +813,6 @@
             "namespace": "Silk.NET.DXGI",
             "extensionsNamespace": "Silk.NET.DXGI.Extensions",
             "nameContainer": {
-                "linux-x64": "libDXGI.so",
                 "win-x64": "DXGI.dll",
                 "win-x86": "DXGI.dll",
                 "osx-x64": "libDXGI.dylib",
@@ -908,7 +901,6 @@
             "namespace": "Silk.NET.Direct3D11",
             "extensionsNamespace": "Silk.NET.Direct3D11.Extensions",
             "nameContainer": {
-                "linux-x64": "libd3d11.so",
                 "win-x64": "d3d11.dll",
                 "win-x86": "d3d11.dll",
                 "osx-x64": "libd3d11.dylib",
@@ -989,7 +981,6 @@
             "namespace": "Silk.NET.Direct3D12",
             "extensionsNamespace": "Silk.NET.Direct3D12.Extensions",
             "nameContainer": {
-                "linux-x64": "libD3D12.so",
                 "win-x64": "D3D12.dll",
                 "win-x86": "D3D12.dll",
                 "osx-x64": "libD3D12.dylib",
@@ -1065,7 +1056,6 @@
             "namespace": "Silk.NET.Direct3D9",
             "extensionsNamespace": "Silk.NET.Direct3D9.Extensions",
             "nameContainer": {
-                "linux-x64": "libd3d9.so",
                 "win-x64": "d3d9.dll",
                 "win-x86": "d3d9.dll",
                 "osx-x64": "libd3d9.dylib",
@@ -1137,7 +1127,6 @@
             "namespace": "Silk.NET.Direct3D.Compilers",
             "extensionsNamespace": "Silk.NET.Direct3D.Compilers.Extensions",
             "nameContainer": {
-                "linux-x64": "libdxcompiler.so",
                 "win-x64": "dxcompiler.dll",
                 "win-x86": "dxcompiler.dll",
                 "osx-x64": "libdxcompiler.dylib",
@@ -1206,7 +1195,6 @@
             "namespace": "Silk.NET.Direct3D.Compilers",
             "extensionsNamespace": "Silk.NET.Direct3D.Compilers.Extensions",
             "nameContainer": {
-                "linux-x64": "libD3DCompiler_47.so",
                 "win-x64": "D3DCompiler_47.dll",
                 "win-x86": "D3DCompiler_47.dll",
                 "osx-x64": "libD3DCompiler_47.dylib",
@@ -1439,7 +1427,6 @@
             "namespace": "Silk.NET.Direct2D1",
             "extensionsNamespace": "Silk.NET.Direct2D1.Extensions",
             "nameContainer": {
-                "linux-x64": "libd2d1.so",
                 "win-x64": "d2d1.dll",
                 "win-x86": "d2d1.dll",
                 "osx-x64": "libd2d1.dylib",

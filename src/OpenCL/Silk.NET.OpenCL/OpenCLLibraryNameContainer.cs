@@ -13,9 +13,6 @@ namespace Silk.NET.OpenCL
     internal class OpenCLLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libOpenCL.so";
-
-        /// <inheritdoc />
         public override string MacOS => "/System/Library/Frameworks/OpenCL.framework/OpenCL";
 
         /// <inheritdoc />

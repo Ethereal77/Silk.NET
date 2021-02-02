@@ -38,30 +38,9 @@ namespace Silk.NET.GLFW
                 Cocoa = (nint) ((delegate* unmanaged[Cdecl]<WindowHandle*, void*>)getCocoaId)(window);
                 return;
             }
-
-            var getX11Display = api.Context.GetProcAddress("glfwGetX11Display");
-            var getX11Window = api.Context.GetProcAddress("glfwGetX11Window");
-            if (getX11Display != default && getX11Window != default)
-            {
-                Kind |= NativeWindowFlags.X11;
-                X11 = ((nint) ((delegate* unmanaged[Cdecl]<void*>) getX11Display)(),
-                    ((delegate* unmanaged[Cdecl]<WindowHandle*, nuint>) getX11Window)(window));
-                return;
-            }
-
-            var getWaylandDisplay = api.Context.GetProcAddress("glfwGetWaylandDisplay");
-            var getWaylandWindow = api.Context.GetProcAddress("glfwGetWaylandWindow");
-            if (getWaylandDisplay != default && getWaylandWindow != default)
-            {
-                Kind |= NativeWindowFlags.Wayland;
-                Wayland = ((nint) ((delegate* unmanaged[Cdecl]<void*>) getWaylandDisplay)(),
-                    (nint) ((delegate* unmanaged[Cdecl]<WindowHandle*, void*>) getWaylandWindow)(window));
-            }
         }
         public NativeWindowFlags Kind { get; }
-        public (nint Display, nuint Window)? X11 { get; }
         public nint? Cocoa { get; }
-        public (nint Display, nint Surface)? Wayland { get; }
         public nint? WinRT { get; }
         public (nint Window, uint Framebuffer, uint Colorbuffer, uint ResolveFramebuffer)? UIKit { get; }
         public (nint Hwnd, nint HDC, nint HInstance)? Win32 { get; }

@@ -138,8 +138,6 @@ namespace Silk.NET.Vulkan
         XlibSurfaceCreateInfoKhr = 1000004000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_XCB_SURFACE_CREATE_INFO_KHR")]
         XcbSurfaceCreateInfoKhr = 1000005000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_WAYLAND_SURFACE_CREATE_INFO_KHR")]
-        WaylandSurfaceCreateInfoKhr = 1000006000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR")]
         Win32SurfaceCreateInfoKhr = 1000009000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEBUG_REPORT_CALLBACK_CREATE_INFO_EXT")]

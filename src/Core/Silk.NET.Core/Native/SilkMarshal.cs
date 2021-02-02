@@ -527,11 +527,7 @@ namespace Silk.NET.Core.Native
             var attr = @delegate.Method.GetCustomAttribute<UnmanagedFunctionPointerAttribute>();
             var callConv = attr?.CallingConvention ?? CallingConvention.Winapi;
             if (callConv == CallingConvention.Winapi && conv != CallingConvention.Winapi)
-            {
-                callConv = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                    ? CallingConvention.Cdecl
-                    : CallingConvention.StdCall;
-            }
+                callConv = CallingConvention.StdCall;
 
             if (callConv != conv)
             {

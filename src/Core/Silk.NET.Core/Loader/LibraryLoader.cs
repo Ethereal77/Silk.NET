@@ -313,11 +313,6 @@ namespace Silk.NET.Core.Loader
                 return new Win32LibraryLoader();
             }
 
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                return new UnixLibraryLoader();
-            }
-
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ||
                 RuntimeInformation.OSDescription.ToUpper().Contains("BSD"))
             {
@@ -400,24 +395,6 @@ namespace Silk.NET.Core.Loader
             protected override nint CoreLoadNativeLibrary(string name)
             {
                 return Kernel32.LoadLibrary(name);
-            }
-        }
-
-        private class UnixLibraryLoader : LibraryLoader
-        {
-            protected override void CoreFreeNativeLibrary(nint handle)
-            {
-                Libdl.dlclose(handle);
-            }
-
-            protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
-            {
-                return Libdl.dlsym(handle, functionName);
-            }
-
-            protected override nint CoreLoadNativeLibrary(string name)
-            {
-                return Libdl.dlopen(name, Libdl.RtldNow);
             }
         }
     }

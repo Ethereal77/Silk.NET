@@ -13,9 +13,6 @@ namespace Silk.NET.OpenGL.Legacy
     internal class OpenGLLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libGL.so.1";
-
-        /// <inheritdoc />
         public override string MacOS => "/System/Library/Frameworks/OpenGL.framework/OpenGL";
 
         /// <inheritdoc />

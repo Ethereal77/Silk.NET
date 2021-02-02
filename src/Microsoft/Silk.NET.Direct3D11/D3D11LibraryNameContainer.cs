@@ -13,9 +13,6 @@ namespace Silk.NET.Direct3D11
     internal class D3D11LibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libd3d11.so";
-
-        /// <inheritdoc />
         public override string MacOS => "libd3d11.dylib";
 
         /// <inheritdoc />

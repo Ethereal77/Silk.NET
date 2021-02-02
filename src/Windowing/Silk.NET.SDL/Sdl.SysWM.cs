@@ -13,11 +13,9 @@ namespace Silk.NET.SDL
     {
         Unknown,
         Windows,
-        X11,
         DirectFB,
         Cocoa,
         UIKit,
-        Wayland,
         Mir, /* no longer available, left for API/ABI compatibility. Remove in 2.1! */
         WinRT,
         Vivante,
@@ -46,11 +44,6 @@ namespace Silk.NET.SDL
         public nint LParam; /**< LONG message parameter */
     }
 
-    public struct SysWMMsgX11
-    {
-        public unsafe fixed byte Event[24 * sizeof(long)];
-    }
-
     public struct SysWMMsgDummy
     {
         public int Dummy;
@@ -60,7 +53,6 @@ namespace Silk.NET.SDL
     public struct SysWMMsgValue
     {
         [FieldOffset(0)] public SysWMMsgWindows Win;
-        [FieldOffset(0)] public SysWMMsgX11 X11;
         [FieldOffset(0)] public SysWMMsgDummy Cocoa;
         [FieldOffset(0)] public SysWMMsgDummy UIKit;
         [FieldOffset(0)] public SysWMMsgDummy Vivante;
@@ -85,10 +77,8 @@ namespace Silk.NET.SDL
     {
         [FieldOffset(0)] public SysWMInfoWindows Win;
         [FieldOffset(0)] public SysWMInfoWinRT WinRT;
-        [FieldOffset(0)] public SysWMInfoX11 X11;
         [FieldOffset(0)] public SysWMInfoCocoa Cocoa;
         [FieldOffset(0)] public SysWMInfoUIKit UIKit;
-        [FieldOffset(0)] public SysWMInfoWayland Wayland;
         [FieldOffset(0)] public SysWMInfoMir Mir;
         [FieldOffset(0)] public SysWMInfoVivante Vivante;
 
@@ -97,28 +87,9 @@ namespace Silk.NET.SDL
         [FieldOffset(0)] public unsafe fixed byte Dummy[64];
     }
 
-    public struct SysWMInfoX11
-    {
-        public unsafe void* Display;
-
-        /**< The X11 display */
-        public unsafe void* Window; /**< The X11 window */
-    }
-
     public struct SysWMInfoCocoa
     {
         public unsafe void* Window; /**< The Cocoa window */
-    }
-
-    public struct SysWMInfoWayland
-    {
-        public unsafe void* Display;
-
-        /**< Wayland display */
-        public unsafe void* Surface;
-
-        /**< Wayland surface */
-        public unsafe void* ShellSurface; /**< Wayland shell_surface (window manager handle) */
     }
 
     public struct SysWMInfoWinRT

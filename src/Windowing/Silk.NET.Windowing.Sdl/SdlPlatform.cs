@@ -72,7 +72,6 @@ namespace Silk.NET.Windowing.Sdl
         {
             "Windows" => false,
             "Mac OS X" => false,
-            "Linux" => false,
             _ => true
         };
 

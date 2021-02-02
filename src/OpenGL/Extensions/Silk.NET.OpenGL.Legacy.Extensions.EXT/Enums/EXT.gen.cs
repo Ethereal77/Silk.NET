@@ -1691,8 +1691,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeName("Name", "GL_MAX_WINDOW_RECTANGLES_EXT")]
         MaxWindowRectanglesExt = 0x8F14,
         [NativeName("Name", "GL_NUM_WINDOW_RECTANGLES_EXT")]
-        NumWindowRectanglesExt = 0x8F15,
-        [NativeName("Name", "GL_SYNC_X11_FENCE_EXT")]
-        SyncX11FenceExt = 0x90E1,
+        NumWindowRectanglesExt = 0x8F15
     }
 }

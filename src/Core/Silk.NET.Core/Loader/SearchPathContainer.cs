@@ -38,11 +38,6 @@ namespace Silk.NET.Core.Loader
         public abstract string Windows86 { get; }
 
         /// <summary>
-        /// Gets the library name to use on Linux.
-        /// </summary>
-        public abstract string Linux { get; }
-
-        /// <summary>
         /// Gets the library name to use on MacOS.
         /// </summary>
         public abstract string MacOS { get; }
@@ -56,7 +51,6 @@ namespace Silk.NET.Core.Loader
             UnderlyingPlatform.Unknown => ThrowInvalidPlatform(),
             UnderlyingPlatform.Windows64 => Windows64,
             UnderlyingPlatform.Windows86 => Windows86,
-            UnderlyingPlatform.Linux => Linux,
             UnderlyingPlatform.MacOS => MacOS,
             _ => ThrowInvalidPlatform()
         };

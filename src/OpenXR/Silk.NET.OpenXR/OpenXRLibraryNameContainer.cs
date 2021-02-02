@@ -13,9 +13,6 @@ namespace Silk.NET.OpenXR
     internal class OpenXRLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
-        public override string Linux => "libopenxr_loader.so.1";
-
-        /// <inheritdoc />
         public override string MacOS => "null";
 
         /// <inheritdoc />
