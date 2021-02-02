@@ -6,7 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\OpenAL\Silk.NET.OpenAL\Silk.NET.OpenAL.csproj" />
         <ProjectReference Include="..\..\Vulkan\Silk.NET.Vulkan\Silk.NET.Vulkan.csproj" />
         <!-- Include KHR because you need KHR_surface in pretty much all cases -->
         <ProjectReference Include="..\..\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.KHR\Silk.NET.Vulkan.Extensions.KHR.csproj" />

@@ -10,9 +10,6 @@ area-Input:
 area-Windowing:
 - any: ['src/Windowing/**/*']
 
-area-OpenAL:
-- any: ['src/OpenAL/**/*']
-
 area-OpenCL:
 - any: ['src/OpenCL/**/*']
 
