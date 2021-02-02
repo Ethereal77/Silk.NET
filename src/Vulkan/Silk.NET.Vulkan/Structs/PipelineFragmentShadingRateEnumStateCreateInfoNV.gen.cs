@@ -96,11 +96,8 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<FragmentShadingRateCombinerOpKHR> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
-#endif
         }
-
     }
 }

@@ -76,10 +76,8 @@ namespace Silk.NET.Direct3D12
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<VideoProcessInputStream> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
-#endif
         }
 
 

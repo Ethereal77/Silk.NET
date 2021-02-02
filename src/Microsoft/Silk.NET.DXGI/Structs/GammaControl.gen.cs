@@ -1097,11 +1097,8 @@ namespace Silk.NET.DXGI
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<Rgb> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 1025);
-#endif
         }
-
     }
 }

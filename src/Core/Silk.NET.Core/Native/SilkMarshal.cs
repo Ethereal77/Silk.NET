@@ -689,11 +689,7 @@ namespace Silk.NET.Core.Native
 
             private static Guid* CreateRiid()
             {
-#if NET5_0
                 var p = (Guid*) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(T), sizeof(Guid));
-#else
-                var p = (Guid*) Allocate(sizeof(Guid));
-#endif
 
                 *p = typeof(T).GUID;
 

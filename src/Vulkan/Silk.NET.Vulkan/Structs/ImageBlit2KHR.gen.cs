@@ -91,13 +91,11 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<Offset3D> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
-#endif
         }
 
-/// <summary></summary>
+        /// <summary></summary>
         [NativeName("Type", "VkImageSubresourceLayers")]
         [NativeName("Type.Name", "VkImageSubresourceLayers")]
         [NativeName("Name", "dstSubresource")]
@@ -128,11 +126,8 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<Offset3D> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
-#endif
         }
-
     }
 }

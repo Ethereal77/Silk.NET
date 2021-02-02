@@ -94,7 +94,6 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("        {");
                     // yes i know this is unsafe and that there's a good reason why struct members can't return themselves
                     // by reference, but this should work well enough.
-                    sw.WriteLine("#if NETSTANDARD2_1 || NET5_0 || NETCOREAPP3_1");
                     sw.WriteLine($"            return ref Unsafe.As<{@struct.Name}, {comBase}>");
                     sw.WriteLine($"            (");
                     sw.WriteLine($"                ref MemoryMarshal.GetReference");
@@ -106,12 +105,6 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"                    )");
                     sw.WriteLine($"                )");
                     sw.WriteLine($"            );");
-                    sw.WriteLine("#else");
-                    sw.WriteLine($"            fixed ({@struct.Name}* @this = &this)");
-                    sw.WriteLine($"            {{");
-                    sw.WriteLine($"                return ref *({comBase}*) @this;");
-                    sw.WriteLine($"            }}");
-                    sw.WriteLine("#endif");
                     sw.WriteLine("        }");
                     sw.WriteLine();
                     sw.WriteLine($"        public static ref {@struct.Name} From{fromSuffix}(in {comBase} @this)");
@@ -246,10 +239,8 @@ namespace Silk.NET.BuildTools.Bind
                         if (!typeFixup09072020.IsPointer)
                         {
                             sw.WriteLine();
-                            sw.WriteLine("#if NETSTANDARD2_1");
                             sw.WriteLine($"            public Span<{typeFixup09072020}> AsSpan()");
                             sw.WriteLine($"                => MemoryMarshal.CreateSpan(ref Element0, {count});");
-                            sw.WriteLine("#endif");
                         }
 
                         sw.WriteLine("        }");
@@ -462,19 +453,11 @@ namespace Silk.NET.BuildTools.Bind
       
         public static void WriteFusedField(Field field, List<string> args, StreamWriter sw)
         {
-            sw.WriteLine("#if NETSTANDARD2_1");
             sw.WriteLine($"        public ref {field.Type} {field.Name}");
             sw.WriteLine("        {");
             sw.WriteLine("            [MethodImpl((MethodImplOptions) 768)]");
             sw.WriteLine($"            get => ref {args[1]}.{args[2]};");
             sw.WriteLine("        }");
-            sw.WriteLine("#else");
-            sw.WriteLine($"        public {field.Type} {field.Name}");
-            sw.WriteLine("        {");
-            sw.WriteLine($"            get => {args[1]}.{args[2]};");
-            sw.WriteLine($"            set => {args[1]}.{args[2]} = value;");
-            sw.WriteLine("        }");
-            sw.WriteLine("#endif");
             sw.WriteLine();
         }
     }

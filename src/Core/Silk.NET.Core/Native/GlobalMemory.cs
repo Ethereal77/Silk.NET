@@ -34,7 +34,6 @@ namespace Silk.NET.Core.Native
         /// <param name="index">The index.</param>
         public ref byte this[int index] => ref Unsafe.Add(ref GetPinnableReference(), index);
 
-#if NETCOREAPP3_1 || NET5_0
         /// <summary>
         /// Gets a reference to a specific index of this block of global memory.
         /// </summary>
@@ -47,7 +46,6 @@ namespace Silk.NET.Core.Native
         /// <param name="range">The range.</param>
         public Span<byte> this[Range range]
             => AsSpan().Slice(range.Start.GetOffset(Length), range.End.GetOffset(Length));
-#endif
 
         /// <summary>
         /// Gets a handle to this block of global memory.
@@ -160,11 +158,7 @@ namespace Silk.NET.Core.Native
         /// <param name="length">The number of bytes to allocate.</param>
         /// <returns>A block of global memory.</returns>
         public static GlobalMemory Allocate(int length) =>
-#if !NET5_0
-            new GlobalMemory(new GCHandleByteArray(length), length > 0 ? length : 1);
-#else
             new GlobalMemory(GC.AllocateUninitializedArray<byte>(length > 0 ? length : 1, true), length);
-#endif
 
         // Encapsulations different kinds of memory
         private interface IGlobalMemory

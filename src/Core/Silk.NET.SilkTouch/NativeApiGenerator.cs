@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -65,7 +65,7 @@ namespace Silk.NET.SilkTouch
 
 
             marshalBuilder = new MarshalBuilder();
-            
+
             // begin            |           end
             marshalBuilder.Use(Middlewares.InjectMiddleware);
             marshalBuilder.Use(Middlewares.ParameterInitMiddleware);
@@ -81,7 +81,7 @@ namespace Silk.NET.SilkTouch
             // pre load         |           post load
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
-            
+
 
             foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
             {
@@ -141,7 +141,7 @@ namespace Silk.NET.SilkTouch
             if (!compilation.HasImplicitConversion
                 (classSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeApiContainer")))
                 return null;
-            
+
             var classIsSealed = classDeclaration.Modifiers.Any(x => x.Text == "sealed");
             var generateSeal = false;
 
@@ -152,8 +152,8 @@ namespace Silk.NET.SilkTouch
                 if (bool.TryParse(generateSealstr, out var v))
                     generateSeal = v;
             }
-            
-            
+
+
             var generateVTable = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
@@ -163,7 +163,7 @@ namespace Silk.NET.SilkTouch
                 if (bool.TryParse(genvtablestr, out var v))
                     generateVTable = v;
             }
-            
+
             var preloadVTable = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
@@ -173,7 +173,7 @@ namespace Silk.NET.SilkTouch
                 if (bool.TryParse(vtablepreloadstr, out var v))
                     preloadVTable = v;
             }
-            
+
             var emitAssert = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
@@ -195,7 +195,7 @@ namespace Silk.NET.SilkTouch
 
             int slotCount = 0;
             int gcCount = 0;
-            
+
             var generatedVTableName = NameGenerator.Name("GeneratedVTable");
             Dictionary<int, string> entryPoints = new Dictionary<int, string>();
             var processedEntrypoints = new List<EntryPoint>();
@@ -299,7 +299,7 @@ namespace Silk.NET.SilkTouch
                     (
                         preloadVTable, entryPoints, emitAssert,
                         sourceContext.ParseOptions.PreprocessorSymbolNames.Any
-                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */),
+                            (x => x == "NET5" /* SEE INativeContext.cs in Core */),
                         generatedVTableName
                     )
                 );
@@ -565,12 +565,12 @@ namespace Silk.NET.SilkTouch
         private static string GetCallingConvention(CallingConvention convention)
             => convention switch
             {
-                // CallingConvention.Winapi => "", netstandard2.0 doesn't allow this
+                CallingConvention.Winapi => "",
                 CallingConvention.Cdecl => "Cdecl",
                 CallingConvention.ThisCall => "Thiscall",
                 CallingConvention.StdCall => "Stdcall",
                 CallingConvention.FastCall => "Fastcall",
-                _ => throw new ArgumentException("convention is invalid", nameof(convention))
+                _ => throw new ArgumentException("Invalid calling convention.", nameof(convention))
             };
 
         private static NativeApiAttribute? ToNativeApiAttribute(AttributeData? attributeData)

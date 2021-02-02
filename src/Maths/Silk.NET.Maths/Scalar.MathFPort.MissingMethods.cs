@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -372,10 +372,6 @@ namespace Silk.NET.Maths
 
         [MethodImpl(MaxOpt)]
         private static double CoreCbrt(double x)
-#if NETSTANDARD2_0
-            => Math.Ceiling(Math.Pow(x, 1d / 3));
-#else
             => Math.Cbrt(x);
-#endif
     }
 }

@@ -45,7 +45,7 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(Half))
             {
-#if NET5_0 && INTRINSICS
+#if INTRINSICS
                 if (Sse2.IsSupported)
                 {
                     return (T)(object)(Half)Sse.And(Vector128.CreateScalarUnsafe((float) (Half) (object) x), Vector128.Create(-0.0f)).ToScalar();
@@ -55,12 +55,6 @@ namespace Silk.NET.Maths
                     return (T)(object)(Half)AdvSimd.And(Vector128.CreateScalarUnsafe((float) (Half) (object) x), Vector128.Create(-0.0f)).ToScalar();
                 }
                 else
-#elif NETCOREAPP3_1 && INTRINSICS
-                    if (Sse.IsSupported)
-                    {
-                        return (T)(object)(Half)Sse.And(Vector128.CreateScalarUnsafe((float) (Half) (object) x), Vector128.CreateScalarUnsafe(-0.0f)).ToScalar();
-                    }
-                    else
 #endif
                 {
                     var v = *(ushort*) &x;
@@ -76,7 +70,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(float))
                 {
-#if NET5_0 && INTRINSICS
+#if INTRINSICS
                     if (Sse.IsSupported)
                     {
                         return (T)(object)(float)Sse.And(Vector128.CreateScalarUnsafe((float)(object)x), Vector128.Create((uint)0x7FFF_FFFF).AsSingle()).ToScalar();
@@ -84,12 +78,6 @@ namespace Silk.NET.Maths
                     else if (AdvSimd.IsSupported)
                     {
                         return (T) (object) (float)AdvSimd.AbsScalar(Vector64.CreateScalarUnsafe((float) (object) x)).ToScalar();
-                    }
-                    else
-#elif NETCOREAPP3_1 && INTRINSICS
-                    if (Sse.IsSupported)
-                    {
-                        return (T)(object)(float)Sse.And(Vector128.CreateScalarUnsafe((float)(object)x), Vector128.CreateScalarUnsafe((uint)0x7FFF_FFFF).AsSingle()).ToScalar();
                     }
                     else
 #endif
@@ -108,7 +96,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-#if NET5_0 && INTRINSICS
+#if INTRINSICS
                     if (Sse2.IsSupported)
                     {
                         return (T)(object)(double)Sse2.And(Vector128.CreateScalarUnsafe((double)(object)x), Vector128.Create((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).ToScalar();
@@ -116,12 +104,6 @@ namespace Silk.NET.Maths
                     else if (AdvSimd.IsSupported)
                     {
                         return (T) (object) (double)AdvSimd.AbsScalar(Vector64.CreateScalar((double) (object) x)).ToScalar();
-                    }
-                    else
-#elif NETCOREAPP3_1 && INTRINSICS
-                    if (Sse2.IsSupported)
-                    {
-                        return (T)(object)(double)Sse2.And(Vector128.CreateScalarUnsafe((double)(object)x), Vector128.CreateScalarUnsafe((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).ToScalar();
                     }
                     else
 #endif

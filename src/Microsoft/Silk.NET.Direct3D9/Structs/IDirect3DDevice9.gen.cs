@@ -289,10 +289,8 @@ namespace Silk.NET.Direct3D9
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<System.Numerics.Matrix4x4> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 8);
-#endif
         }
 
 
@@ -365,10 +363,8 @@ namespace Silk.NET.Direct3D9
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<Light9> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 16);
-#endif
         }
 
         [NativeName("Type", "BOOL [16]")]

@@ -76,19 +76,11 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "UINT8")]
         [NativeName("Name", "Flags")]
         public byte Flags;
-#if NETSTANDARD2_1
+
         public ref ushort Index1D
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref Anonymous.Index1D;
         }
-#else
-        public ushort Index1D
-        {
-            get => Anonymous.Index1D;
-            set => Anonymous.Index1D = value;
-        }
-#endif
-
     }
 }

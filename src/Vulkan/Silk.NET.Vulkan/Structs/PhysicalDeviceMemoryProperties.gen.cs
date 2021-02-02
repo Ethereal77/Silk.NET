@@ -99,13 +99,11 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<MemoryType> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 32);
-#endif
         }
 
-/// <summary></summary>
+        /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "memoryHeapCount")]
@@ -150,11 +148,8 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<MemoryHeap> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 16);
-#endif
         }
-
     }
 }

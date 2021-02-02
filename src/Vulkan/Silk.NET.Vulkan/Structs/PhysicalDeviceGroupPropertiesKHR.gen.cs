@@ -121,13 +121,11 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<PhysicalDevice> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 32);
-#endif
         }
 
-/// <summary></summary>
+        /// <summary></summary>
         [NativeName("Type", "VkBool32")]
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "subsetAllocation")]

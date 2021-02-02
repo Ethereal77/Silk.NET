@@ -53,10 +53,8 @@ namespace Silk.NET.Direct3D9
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<Resourcestats> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 8);
-#endif
         }
 
     }

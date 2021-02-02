@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net5.0;netcoreapp3.1;netframework4.8</TargetFrameworks>
-        <LangVersion>9.0</LangVersion>
+        <TargetFrameworks>net5.0</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
         <IsPackable>false</IsPackable>
 
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

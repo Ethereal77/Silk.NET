@@ -217,7 +217,6 @@ namespace Silk.NET.Windowing.Internals
             // TODO this monstrosity will be gone once Silk.NET.Maths has intrinsics
             if (Vector.IsHardwareAccelerated && Vector<int>.Count >= 2)
             {
-#if NETSTANDARD2_1
                 // ReSharper disable SuggestVarOrType_Elsewhere
                 Span<int> framebufferSizeElements = stackalloc int[Vector<int>.Count];
                 Unsafe.As<int, Vector2D<int>>(ref framebufferSizeElements[0]) = FramebufferSize;
@@ -229,16 +228,6 @@ namespace Silk.NET.Windowing.Internals
                 Unsafe.As<int, Vector2D<int>>(ref pointElements[0]) = point;
                 var thePoint = new Vector<int>(pointElements);
                 // ReSharper restore SuggestVarOrType_Elsewhere
-#else
-                var c = Vector<int>.Count;
-                var a = new int[c * 3];
-                Unsafe.As<int, Vector2D<int>>(ref a[0]) = FramebufferSize;
-                Unsafe.As<int, Vector2D<int>>(ref a[c]) = Size;
-                Unsafe.As<int, Vector2D<int>>(ref a[c * 2]) = point;
-                var framebufferSize = new Vector<int>(a, 0);
-                var size = new Vector<int>(a, c);
-                var thePoint = new Vector<int>(a, c * 2);
-#endif
                 thePoint = Vector.Multiply(thePoint, Vector.Divide(framebufferSize, size));
                 return new Vector2D<int>(thePoint[0], thePoint[1]);
             }

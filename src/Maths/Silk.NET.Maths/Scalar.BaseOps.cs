@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -77,9 +77,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(double))
                 {
-                    // double.IsFinite doesn't exist on netstandard2.0
-                    long bits = BitConverter.DoubleToInt64Bits((double) (object) f);
-                    return (bits & 0x7FFFFFFFFFFFFFFF) < 0x7FF0000000000000;
+                    return double.IsFinite((double) (object) f);
                 }
 
                 return Other(f);
@@ -504,7 +502,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Determines whether the specified value is subnormal.    
+        /// Determines whether the specified value is subnormal.
         /// </summary>
         /// <param name="f">A number</param>
         /// <typeparam name="T">The type of the specified number.</typeparam>

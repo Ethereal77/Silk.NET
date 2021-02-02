@@ -160,11 +160,7 @@ namespace Silk.NET.Maths
                 MinusTwo = (T) (object) -2d;
                 E = (T) (object) Math.E;
                 Pi = (T) (object) Math.PI;
-#if !NET5_0
-                Tau = Scalar.Multiply(Pi, Two);
-#else
                 Tau = (T) (object) Math.Tau;
-#endif
             }
             else if (typeof(T) == typeof(decimal))
             {

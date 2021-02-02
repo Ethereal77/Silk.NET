@@ -458,11 +458,7 @@ namespace Silk.NET.BuildTools.Cpp
                 fileContents = fileContents.Slice
                     (unchecked((int) startOffset), unchecked((int) (endOffset - startOffset)));
 
-#if NETCOREAPP
                 return Encoding.UTF8.GetString(fileContents);
-#else
-                return Encoding.UTF8.GetString(fileContents.ToArray());
-#endif
             }
 
             bool TryGetUuid(RecordDecl recordDecl, out Guid uuid)

@@ -253,10 +253,8 @@ namespace Silk.NET.Direct3D12
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<Silk.NET.DXGI.Format> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 8);
-#endif
         }
 
 

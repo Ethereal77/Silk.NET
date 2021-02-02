@@ -80,10 +80,8 @@ namespace Silk.NET.Direct3D11
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<RenderTargetBlendDesc1> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 8);
-#endif
         }
 
     }

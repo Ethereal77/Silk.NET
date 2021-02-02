@@ -87,11 +87,8 @@ namespace Silk.NET.Direct3D12
                 }
             }
 
-#if NETSTANDARD2_1
             public Span<VideoDecodeOutputHistogram> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 4);
-#endif
         }
-
     }
 }
