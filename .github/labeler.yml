@@ -16,9 +16,6 @@ area-OpenAL:
 area-OpenCL:
 - any: ['src/OpenCL/**/*']
 
-area-OpenXR:
-- any: ['src/OpenXR/**/*']
-
 area-Vulkan:
 - any: ['src/Vulkan/**/*']
 

@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -76,7 +76,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     NativeType = x.Type.ToString(),
                                     Type = ConvertType(x.Type),
                                     DefaultAssignment =
-                                        (x.Type.Name == "VkStructureType" || x.Type.Name == "XrStructureType")
+                                        (x.Type.Name == "VkStructureType")
                                         && !string.IsNullOrWhiteSpace(x.LegalValues)
                                             ? "StructureType." + TryTrim
                                             (
@@ -96,7 +96,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 );
             }
-            
+
             foreach (var h in spec.Handles)
             {
                 ret.Add
@@ -164,7 +164,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }
             }
-        } 
+        }
 
         private int GetTypeSize(string type, IEnumerable<Dictionary<string, string>> maps)
         {
@@ -236,7 +236,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 }
             }
-            
+
             foreach (var extension in spec.Extensions)
             {
                 foreach (var name in extension.CommandNames)
@@ -317,7 +317,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }
             }
-            
+
             task.InjectTypeMap(tm);
         }
 
@@ -403,7 +403,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 _ => FlowDirection.In
             };
         }
-        
+
         private Dictionary<string, Enum> ConvertEnums(VulkanSpecification spec, BindTask task)
         {
             var ret = new Dictionary<string, Enum>();
