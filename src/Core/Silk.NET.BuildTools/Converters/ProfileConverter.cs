@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -10,8 +10,6 @@ using System.Linq;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.Converters.Constructors;
-using Silk.NET.BuildTools.Converters.Readers;
 
 namespace Silk.NET.BuildTools.Converters
 {
