@@ -6,8 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="SSH.NET" Version="2020.0.0-beta1" />
-      <PackageReference Include="System.Text.Json" Version="5.0.0" />
+      <PackageReference Include="SSH.NET" Version="2020.0.1" />
+      <PackageReference Include="System.Text.Json" Version="5.0.1" />
       <PackageReference Include="Ultz.Extensions.Logging" Version="2.0.1" />
     </ItemGroup>
 

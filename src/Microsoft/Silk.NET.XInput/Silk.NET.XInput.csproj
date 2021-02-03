@@ -6,8 +6,5 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
-  <ItemGroup>
-  </ItemGroup>
-
   <Import Project="..\..\..\build\props\bindings.props" />
 </Project>
